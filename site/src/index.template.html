@@ -1,0 +1,1201 @@
+<title>Dentora Clinic Redizajn</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,500;1,400&display=swap">
+<style>
+/* Layout: brand-led editorial clinic page — split hero, warm cream bands, gold hairlines, one hero interaction (the before/after slider). Single light brand look by choice. */
+:root{
+  color-scheme: light;
+  --bg:#f7f3ec;
+  --paper:#fffdf9;
+  --sand:#efe7da;
+  --ink:#2b2520;
+  --muted:#6f655b;
+  --gold:#a8834f;
+  --gold-deep:#8c6a3c;
+  --line:rgba(168,131,79,.28);
+  --shadow:0 14px 40px rgba(60,42,20,.08);
+  --display:"Playfair Display",Georgia,"Times New Roman",serif;
+  --sans:"DM Sans","Helvetica Neue",Arial,sans-serif;
+  --max:1240px;
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--sans);font-size:16px;line-height:1.6;overflow-x:hidden}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:60;background:var(--paper)}
+img{display:block;max-width:100%}
+a{color:inherit}
+.wrap{max-width:var(--max);margin:0 auto;padding-left:max(20px,env(safe-area-inset-left,0px));padding-right:max(20px,env(safe-area-inset-right,0px))}
+.eyebrow{font-size:12px;letter-spacing:.22em;text-transform:uppercase;color:var(--gold);font-weight:600;margin:0 0 14px}
+h1,h2,h3{font-family:var(--display);font-weight:500;line-height:1.02;margin:0;text-wrap:balance;letter-spacing:-.01em}
+h1{font-size:clamp(46px,7vw,92px)}
+h2{font-size:clamp(36px,4.6vw,58px)}
+h3{font-size:26px}
+p{margin:0}
+.lead{font-size:18px;color:var(--muted);max-width:30em}
+.btn{display:inline-flex;align-items:center;gap:10px;padding:15px 28px;border-radius:3px;font-family:var(--sans);font-size:13px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;text-decoration:none;border:1px solid var(--gold);transition:background .25s,color .25s,transform .25s;cursor:pointer}
+.btn-gold{background:var(--gold);color:#fff}
+.btn-gold:hover{background:var(--gold-deep);border-color:var(--gold-deep)}
+.btn-line{background:transparent;color:var(--gold-deep)}
+.btn-line:hover{background:var(--gold);color:#fff}
+.btn:focus-visible,a:focus-visible,button:focus-visible,[role=slider]:focus-visible{outline:2px solid var(--gold-deep);outline-offset:3px}
+.arr{font-size:16px;line-height:1}
+
+/* header */
+header{position:sticky;top:env(safe-area-inset-top,0px);z-index:50;background:rgba(255,253,249,.92);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+.nav{display:flex;align-items:center;justify-content:space-between;gap:24px;min-height:78px}
+.logo img{height:40px;width:auto}
+.menu{display:flex;gap:30px;list-style:none;margin:0;padding:0;font-size:14px}
+.menu a{text-decoration:none;color:var(--ink);padding:6px 0;border-bottom:1.5px solid transparent;transition:border-color .2s}
+.menu a:hover,.menu a.on{border-color:var(--gold)}
+.nav-r{display:flex;align-items:center;gap:18px}
+.lang{font-size:13px;color:var(--muted);letter-spacing:.08em}
+.burger{display:none;background:none;border:0;width:44px;height:44px;cursor:pointer;color:var(--ink)}
+.burger span{display:block;height:1.5px;background:currentColor;margin:7px 9px}
+@media (max-width:960px){
+  .menu{position:absolute;left:0;right:0;top:100%;flex-direction:column;gap:0;background:var(--paper);border-bottom:1px solid var(--line);padding:8px max(20px,env(safe-area-inset-right,0px)) 18px max(20px,env(safe-area-inset-left,0px));display:none}
+  .menu.open{display:flex}
+  .menu a{display:block;padding:12px 0;border-bottom:1px solid var(--line)}
+  .burger{display:block}
+  .nav-r .btn{display:none}
+}
+
+/* hero */
+.hero{background:linear-gradient(100deg,var(--paper) 0%,var(--bg) 55%,var(--sand) 100%);overflow:hidden}
+.hero-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:40px;align-items:end}
+.hero-copy{padding-block:72px 64px;display:flex;flex-direction:column;gap:26px;min-width:0}
+.hero-img{position:relative;align-self:stretch;min-height:560px}
+.hero-img img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:50% 18%;border-radius:220px 220px 0 0}
+.hero-card{position:absolute;left:-28px;bottom:48px;background:var(--paper);padding:18px 22px;box-shadow:var(--shadow);border-left:2px solid var(--gold);max-width:250px}
+.hero-card strong{font-family:var(--display);font-size:24px;font-weight:500;display:block;line-height:1.1}
+.hero-card span{font-size:13px;color:var(--muted)}
+.feats{display:grid;grid-template-columns:repeat(4,1fr);margin-top:14px;max-width:520px}
+.feat{display:flex;flex-direction:column;align-items:center;gap:8px;text-align:center;font-size:12.5px;color:var(--muted);line-height:1.3;padding:0 8px}
+.feat+.feat{border-left:1px solid var(--line)}
+.feat svg{width:32px;height:32px;stroke:var(--gold);fill:none;stroke-width:1.3}
+@media (max-width:860px){
+  .hero-grid{grid-template-columns:1fr;gap:0}
+  .hero-copy{padding-block:44px 32px}
+  .hero-img{min-height:440px;margin-inline:auto;width:min(100%,460px)}
+  .hero-card{left:12px;bottom:20px}
+}
+@media (max-width:440px){.feats{grid-template-columns:repeat(2,1fr);row-gap:18px}.feat:nth-child(3){border-left:0}}
+
+section{padding-block:96px}
+@media (max-width:700px){section{padding-block:64px}}
+.head{display:flex;justify-content:space-between;align-items:end;gap:24px;flex-wrap:wrap;margin-bottom:44px}
+.head .lead{margin-top:14px}
+.link{font-size:13px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--gold-deep);text-decoration:none;display:inline-flex;gap:8px;align-items:center}
+.link:hover{color:var(--ink)}
+
+/* before/after */
+.ba{background:var(--paper);border-block:1px solid var(--line)}
+.ba-grid{display:grid;grid-template-columns:minmax(0,1.5fr) minmax(0,1fr);gap:56px;align-items:center}
+.cmp{position:relative;aspect-ratio:1080/669;max-width:100%;overflow:hidden;border-radius:4px;box-shadow:var(--shadow);cursor:ew-resize;touch-action:pan-y;user-select:none;-webkit-user-select:none;--pos:50%}
+.cmp img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;pointer-events:none}
+.cmp .before{clip-path:inset(0 calc(100% - var(--pos)) 0 0)}
+.cmp .bar{position:absolute;top:0;bottom:0;left:var(--pos);width:2px;margin-left:-1px;background:#fff;box-shadow:0 0 12px rgba(0,0,0,.25)}
+.cmp .knob{position:absolute;top:50%;left:var(--pos);width:54px;height:54px;margin:-27px 0 0 -27px;border-radius:50%;background:#fff;box-shadow:0 6px 20px rgba(0,0,0,.25);display:grid;place-items:center;color:var(--gold-deep)}
+.cmp .knob svg{width:26px;height:26px;stroke:currentColor;fill:none;stroke-width:1.8}
+.tag{position:absolute;top:16px;padding:6px 12px;font-size:11px;letter-spacing:.18em;text-transform:uppercase;font-weight:600;background:rgba(43,37,32,.62);color:#fff;border-radius:2px;pointer-events:none}
+.tag.l{left:16px}.tag.r{right:16px;background:var(--gold)}
+.cases{display:flex;gap:12px;margin-top:18px}
+.case{flex:1;padding:0;border:1px solid transparent;background:none;cursor:pointer;border-radius:3px;overflow:hidden;opacity:.6;transition:opacity .2s,border-color .2s;aspect-ratio:1080/669}
+.case img{width:100%;height:100%;object-fit:cover}
+.case[aria-pressed=true]{opacity:1;border-color:var(--gold)}
+.case:hover{opacity:1}
+.ba-copy{display:flex;flex-direction:column;gap:22px;min-width:0}
+.facts{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--line);border:1px solid var(--line)}
+.facts div{background:var(--paper);padding:16px 18px}
+.facts b{display:block;font-family:var(--display);font-size:30px;font-weight:500;line-height:1;color:var(--gold-deep)}
+.facts span{font-size:13px;color:var(--muted)}
+.hint{font-size:13px;color:var(--muted);display:flex;gap:8px;align-items:center;margin-top:12px}
+@media (max-width:900px){.ba-grid{grid-template-columns:1fr;gap:36px}}
+
+/* about */
+.about-grid{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.1fr);gap:64px;align-items:center}
+.about-img{position:relative}
+.about-img img{width:100%;aspect-ratio:4/5;object-fit:cover;border-radius:3px}
+.about-img .small{position:absolute;right:-28px;bottom:-28px;width:42%;aspect-ratio:3/4;border:8px solid var(--bg);box-shadow:var(--shadow)}
+.about-copy{display:flex;flex-direction:column;gap:22px;min-width:0}
+.sig{font-family:var(--display);font-style:italic;font-size:26px;color:var(--gold-deep)}
+@media (max-width:860px){.about-grid{grid-template-columns:1fr;gap:56px}.about-img{max-width:480px}.about-img .small{right:-8px}}
+
+/* reviews */
+.reviews{background:var(--sand)}
+.gbadge{display:flex;align-items:center;gap:14px;background:var(--paper);padding:12px 18px;border-radius:6px;box-shadow:var(--shadow)}
+.gbadge .g{font-family:var(--sans);font-weight:600;font-size:26px;color:#4285f4}
+.gbadge small{display:block;font-size:12px;color:var(--muted)}
+.gbadge strong{font-size:18px}
+.stars{color:#e6a817;letter-spacing:2px;font-size:14px}
+.rv-row{display:grid;grid-auto-flow:column;grid-auto-columns:minmax(270px,1fr);gap:18px;overflow-x:auto;scroll-snap-type:x mandatory;padding-bottom:10px;scrollbar-width:thin}
+.rv{scroll-snap-align:start;background:var(--paper);padding:22px;border-radius:6px;display:flex;flex-direction:column;gap:12px;min-width:0}
+.rv-top{display:flex;align-items:center;gap:12px}
+.av{width:38px;height:38px;border-radius:50%;background:#3c8c5a;color:#fff;display:grid;place-items:center;font-weight:600}
+.rv-top b{display:block;font-size:14.5px}
+.rv-top small{color:var(--muted);font-size:12px}
+.rv p{font-size:14.5px;color:#4a423b}
+
+/* services */
+.sv-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:20px}
+.sv{position:relative;background:var(--paper);text-decoration:none;display:flex;flex-direction:column;border-radius:3px;overflow:hidden;transition:transform .3s,box-shadow .3s}
+.sv:hover{transform:translateY(-4px);box-shadow:var(--shadow)}
+.sv img{width:100%;aspect-ratio:4/3;object-fit:cover}
+.sv div{display:flex;justify-content:space-between;align-items:center;gap:12px;padding:18px 20px;border-top:1px solid var(--line)}
+.sv h3{font-size:23px}
+.sv .arr{color:var(--gold)}
+@media (max-width:860px){.sv-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media (max-width:480px){.sv-grid{grid-template-columns:1fr}}
+
+/* technology */
+.tech{background:var(--ink);color:#f3ece2}
+.tech .lead{color:#c9bfb2}
+.tech-grid{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:56px;align-items:center}
+.tech img{width:100%;aspect-ratio:3/2;object-fit:cover;border-radius:3px}
+.tlist{list-style:none;margin:28px 0 0;padding:0;display:flex;flex-direction:column}
+.tlist li{display:grid;grid-template-columns:120px 1fr;gap:18px;padding:18px 0;border-top:1px solid rgba(243,236,226,.16)}
+.tlist b{font-family:var(--display);font-size:22px;font-weight:500;color:#d9b97f;line-height:1.2}
+.tlist span{color:#c9bfb2;font-size:15px}
+@media (max-width:860px){.tech-grid{grid-template-columns:1fr}.tlist li{grid-template-columns:1fr;gap:4px}}
+
+/* contact */
+.cta-grid{display:grid;grid-template-columns:minmax(0,1.2fr) minmax(0,1fr);gap:48px;align-items:start}
+.info{background:var(--paper);border:1px solid var(--line);padding:30px;display:grid;gap:18px}
+.info div{display:grid;grid-template-columns:110px 1fr;gap:12px;font-size:15px}
+.info dt{font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:var(--gold);font-weight:600;padding-top:3px}
+.info dd{margin:0;user-select:all}
+dl{margin:0}
+@media (max-width:860px){.cta-grid{grid-template-columns:1fr}}
+footer{border-top:1px solid var(--line);padding-block:28px;font-size:13px;color:var(--muted)}
+footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
+
+.reveal{transition:opacity .8s ease,transform .8s ease}
+.js .reveal.pre{opacity:.001;transform:translateY(24px)}
+@media (prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important}.js .reveal.pre{opacity:1;transform:none}}
+
+/* placeholders the clinic still has to fill */
+.ph{border-bottom:1.5px dashed var(--gold);color:var(--gold-deep);white-space:nowrap}
+.ph-box{aspect-ratio:1080/669;max-width:100%;border:1.5px dashed var(--gold);border-radius:4px;background:var(--bg);display:flex;flex-direction:column;justify-content:center;align-items:center;gap:8px;text-align:center;padding:24px}
+.ph-box b{font-family:var(--display);font-size:26px;font-weight:500}
+.ph-box span{color:var(--muted);font-size:14px;max-width:34em}
+
+/* core treatments */
+.core{padding-block:88px 96px}
+.core-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:22px;align-items:stretch}
+.tc{display:flex;flex-direction:column;background:var(--paper);text-decoration:none;border:1px solid var(--line);border-radius:4px;overflow:hidden;transition:transform .3s,box-shadow .3s}
+.tc:hover{transform:translateY(-5px);box-shadow:var(--shadow)}
+.tc img{width:100%;aspect-ratio:5/4;object-fit:cover}
+.tc-body{display:flex;flex-direction:column;gap:12px;padding:24px 24px 26px;flex:1}
+.tc-body .eyebrow{margin:0}
+.tc h3{font-size:34px}
+.tc-body>p:not(.eyebrow){color:var(--muted);font-size:15px}
+.tc-meta{display:grid;grid-template-columns:1fr;gap:12px;margin:4px 0 6px;padding-top:14px;border-top:1px solid var(--line)}
+.tc-meta dt{font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--muted)}
+.tc-meta dd{margin:2px 0 0;font-size:15px;font-weight:500}
+.tc .link{margin-top:auto}
+@media (max-width:900px){.core-grid{grid-template-columns:1fr;max-width:560px}}
+
+/* tabs */
+.tabs{display:flex;gap:4px;background:var(--bg);padding:4px;border-radius:999px;border:1px solid var(--line);flex-wrap:wrap}
+.tabs button{border:0;background:none;padding:10px 18px;border-radius:999px;font:500 14px var(--sans);color:var(--muted);cursor:pointer}
+.tabs button[aria-selected=true]{background:var(--gold);color:#fff}
+
+/* quiz */
+.quiz-grid{display:grid;grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr);gap:56px;align-items:center}
+.quiz-intro{display:flex;flex-direction:column;gap:18px}
+.quiz-card{background:var(--paper);border:1px solid var(--line);border-radius:4px;padding:32px;box-shadow:var(--shadow);min-height:380px;display:flex;flex-direction:column;gap:18px}
+.qprog{display:flex;gap:6px}
+.qprog i{flex:1;height:3px;background:var(--line);border-radius:2px}
+.qprog i.on{background:var(--gold)}
+.qnum{font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:var(--muted)}
+.quiz-card h3{font-size:32px}
+.qopts{display:grid;gap:10px}
+.qopt{text-align:left;border:1px solid var(--line);background:var(--bg);padding:16px 18px;border-radius:4px;font:16px var(--sans);color:var(--ink);cursor:pointer;transition:border-color .2s,background .2s}
+.qopt:hover{border-color:var(--gold);background:var(--paper)}
+.qres-name{font-family:var(--display);font-size:44px;line-height:1;color:var(--gold-deep)}
+.form{display:grid;gap:12px}
+.form label{font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);display:grid;gap:6px}
+.form input,.form select,.form textarea{font:16px var(--sans);padding:13px 14px;border:1px solid var(--line);border-radius:3px;background:var(--paper);color:var(--ink);text-transform:none;letter-spacing:0}
+.form input,.form select,.form textarea{width:100%;min-width:0}
+.form label{min-width:0}
+.lp-ba{max-width:820px}
+.form input:focus,.form select:focus,.form textarea:focus{outline:2px solid var(--gold);outline-offset:0}
+.row2{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.ok{padding:16px;border:1px solid var(--gold);background:var(--bg);border-radius:3px;font-size:15px}
+.textbtn{background:none;border:0;color:var(--muted);font:14px var(--sans);text-decoration:underline;cursor:pointer;padding:0;justify-self:start}
+@media (max-width:900px){.quiz-grid{grid-template-columns:1fr;gap:32px}}
+@media (max-width:480px){.quiz-card{padding:22px}.row2{grid-template-columns:1fr}}
+
+/* makeover */
+.mk{background:var(--sand)}
+.mk-steps{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:1px;background:var(--line);border:1px solid var(--line)}
+.mk-steps li{background:var(--paper);padding:28px;display:flex;gap:18px}
+.mk-n{font-family:var(--display);font-size:56px;line-height:.8;color:var(--gold)}
+.mk-steps p{color:var(--muted);font-size:15px;margin-top:8px}
+.mk-price{margin-top:22px;font-size:15px}
+@media (max-width:860px){.mk-steps{grid-template-columns:1fr}}
+
+/* other services */
+.other-grid{display:grid;grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr);gap:56px;align-items:start}
+.olist{list-style:none;margin:0;padding:0;border-top:1px solid var(--line)}
+.olist a{display:flex;justify-content:space-between;gap:16px;padding:20px 4px;border-bottom:1px solid var(--line);text-decoration:none;font-family:var(--display);font-size:26px;line-height:1.15;transition:padding .25s,color .25s}
+.olist a:hover{padding-left:12px;color:var(--gold-deep)}
+.olist .arr{color:var(--gold)}
+@media (max-width:860px){.other-grid{grid-template-columns:1fr;gap:28px}}
+
+/* treatment landing pages */
+.lp-hero{background:linear-gradient(100deg,var(--paper) 0%,var(--bg) 60%,var(--sand) 100%);padding-block:40px 72px}
+.crumb{font-size:13px;color:var(--muted);margin-bottom:28px}
+.crumb a{color:var(--gold-deep)}
+.lp-grid{display:grid;grid-template-columns:minmax(0,1.05fr) minmax(0,.95fr);gap:56px;align-items:center}
+.lp-copy{display:flex;flex-direction:column;gap:22px}
+.lp-img{width:100%;aspect-ratio:4/5;object-fit:cover;border-radius:200px 200px 4px 4px;max-height:620px}
+.lp-facts{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:1px;background:var(--line);border:1px solid var(--line)}
+.lp-facts div{background:var(--paper);padding:14px 16px}
+.lp-facts dt{font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--muted)}
+.lp-facts dd{margin:4px 0 0;font-weight:500}
+.lp-two{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:56px;align-items:start}
+.checks{list-style:none;margin:24px 0 0;padding:0;display:grid;gap:12px}
+.checks li{display:flex;gap:12px;font-size:16px}
+.checks li::before{content:"";flex:none;width:18px;height:18px;margin-top:4px;border:1.5px solid var(--gold);border-radius:50%;background:radial-gradient(circle,var(--gold) 0 3px,transparent 4px)}
+.steps{list-style:none;margin:0;padding:0;counter-reset:s;display:grid;gap:0;border-top:1px solid var(--line)}
+.steps li{counter-increment:s;display:grid;grid-template-columns:56px 1fr;gap:12px;padding:20px 0;border-bottom:1px solid var(--line)}
+.steps li::before{content:counter(s);font-family:var(--display);font-size:40px;line-height:1;color:var(--gold)}
+.steps b{font-family:var(--display);font-size:24px;font-weight:500;display:block;line-height:1.15}
+.steps span{color:var(--muted);font-size:15px}
+.faq details{border-bottom:1px solid var(--line);padding:18px 0}
+.faq summary{cursor:pointer;font-family:var(--display);font-size:24px;list-style:none;display:flex;justify-content:space-between;gap:16px}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary::after{content:"+";color:var(--gold);font-family:var(--sans)}
+.faq details[open] summary::after{content:"−"}
+.faq p{color:var(--muted);margin-top:10px;max-width:40em}
+.book{background:var(--paper);border:1px solid var(--line);padding:30px;border-radius:4px;box-shadow:var(--shadow)}
+@media (max-width:900px){.lp-grid,.lp-two{grid-template-columns:1fr;gap:36px}.lp-img{max-width:440px;margin-inline:auto}}
+@media (max-width:480px){.lp-facts{grid-template-columns:1fr}}
+
+.modal{position:fixed;inset:0;z-index:100;background:rgba(43,37,32,.55);display:grid;place-items:center;padding:max(16px,env(safe-area-inset-top,0px)) max(16px,env(safe-area-inset-right,0px)) max(16px,env(safe-area-inset-bottom,0px)) max(16px,env(safe-area-inset-left,0px));overflow-y:auto}
+.modal[hidden]{display:none}
+.modal-card{position:relative;background:var(--paper);width:min(560px,100%);padding:34px;border-radius:4px;box-shadow:0 30px 80px rgba(0,0,0,.3)}
+.modal-x{position:absolute;top:10px;right:12px;width:40px;height:40px;border:0;background:none;font-size:28px;line-height:1;color:var(--muted);cursor:pointer}
+.modal-x:hover{color:var(--ink)}
+@media (max-width:480px){.modal-card{padding:24px}}
+
+/* ===== Typography: matched to dentora-landing-page-gold.html ===== */
+body{line-height:1.5}
+h1,h2,h3,.qres-name,.mk-n,.steps b,.olist a,.faq summary,.ph-box b,.hero-card strong,.facts b,.tlist b,.lp-facts dd{font-family:var(--display);font-weight:400}
+h1{font-size:clamp(58px,7vw,110px);line-height:.94;letter-spacing:-.045em}
+h1 em,h2 em{font-style:italic}
+h2{font-size:clamp(45px,5.1vw,78px);line-height:.98;letter-spacing:-.04em}
+h3,.tc h3,.sv h3{font-size:31px;line-height:1.03;letter-spacing:-.01em}
+.eyebrow{font-size:11px;letter-spacing:.18em;font-weight:600;color:var(--gold-deep);margin-bottom:20px}
+.eyebrow::before{content:"";display:inline-block;width:24px;height:1px;background:var(--gold);vertical-align:middle;margin-right:10px;transform:translateY(-2px)}
+.lead{font-size:18px;line-height:1.7;color:#5d5f57;max-width:580px}
+.btn{font-size:13px;font-weight:500;letter-spacing:0;text-transform:none;min-height:52px;padding:0 23px}
+.menu{font-size:13px}
+.menu a{color:#55574e}
+.menu a:hover,.menu a.on{color:var(--gold-deep)}
+.link{font-size:12px;font-weight:700;letter-spacing:.09em}
+.sig{font-size:29px;font-style:italic;color:var(--gold-deep)}
+.hero-card strong{font-size:26px;line-height:1.05}
+.facts b{font-size:29px}
+.feat{font-size:12px}
+.tlist b{font-size:24px}
+.steps b{font-size:26px;line-height:1.1}
+.olist a{font-size:29px;line-height:1.1}
+.faq summary{font-size:24px}
+.qres-name{font-size:48px;letter-spacing:-.03em}
+.mk-n{font-size:58px}
+.ph-box b{font-size:28px}
+.tc-meta dt,.lp-facts dt,.info dt,.form label,.qnum{font-size:10px;letter-spacing:.12em}
+.info dd,.tc-meta dd{font-size:14px}
+.rv p,.tc-body>p:not(.eyebrow),.steps span,.tlist span,.mk-steps p{font-size:14px;line-height:1.6}
+footer{font-size:11px}
+.rv{align-self:start}
+.rv-text{display:-webkit-box;-webkit-line-clamp:7;-webkit-box-orient:vertical;overflow:hidden}
+.rv.open .rv-text{display:block}
+.rv-more{background:none;border:0;padding:0;font:600 12px var(--sans);letter-spacing:.09em;text-transform:uppercase;color:var(--gold-deep);cursor:pointer;justify-self:start;text-align:left}
+.hero-title{font-size:clamp(44px,5vw,76px)}
+@media (max-width:480px){h3,.tc h3,.sv h3{font-size:28px}.olist a{font-size:25px}}
+
+/* mobile drawer (matches staging.dentora-clinic.hr) */
+.burger{width:46px;height:46px;border-radius:50%;border:1.5px solid var(--line);background:var(--paper);place-items:center;color:var(--ink);padding:0}
+.burger svg{width:22px;height:22px}
+@media (max-width:960px){.menu,.menu.open{display:none!important}.burger{display:grid}}
+.drawer{position:fixed;inset:0;z-index:90;visibility:hidden;transition:visibility 0s linear .35s}
+.drawer.is-open{visibility:visible;transition:none}
+.drawer__backdrop{position:absolute;inset:0;background:rgba(28,26,20,.45);opacity:0;transition:opacity .3s}
+.drawer.is-open .drawer__backdrop{opacity:1}
+.drawer__panel{position:absolute;inset:0 0 0 auto;width:min(420px,100%);background:var(--paper);display:flex;flex-direction:column;padding:calc(18px + env(safe-area-inset-top,0px)) max(24px,env(safe-area-inset-right,0px)) calc(24px + env(safe-area-inset-bottom,0px)) 24px;transform:translateX(100%);transition:transform .35s cubic-bezier(.2,.8,.2,1);overflow-y:auto}
+.drawer.is-open .drawer__panel{transform:none}
+.drawer__top{display:flex;justify-content:space-between;align-items:center;margin-bottom:20px}
+.drawer__top img{height:38px;width:auto}
+.drawer__x{width:44px;height:44px;border-radius:50%;border:1.5px solid var(--line);background:var(--paper);color:var(--ink);display:grid;place-items:center;cursor:pointer;padding:0}
+.drawer__x svg{width:20px;height:20px}
+.drawer__nav{display:grid;gap:2px}
+.drawer__nav a{font-family:var(--display);font-size:26px;line-height:1.2;padding:10px 0;border-bottom:1px solid var(--line);text-decoration:none;color:var(--ink)}
+.drawer__nav a:hover{color:var(--gold-deep)}
+.drawer__label{font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--gold-deep);font-weight:600;margin:22px 0 6px}
+.drawer__services{display:grid}
+.drawer__services a{padding:9px 0;font-size:15px;font-weight:500;text-decoration:none;color:#55574e}
+.drawer__foot{margin-top:auto;padding-top:24px;display:grid;gap:12px}
+.drawer__foot .btn{width:100%;justify-content:center}
+.drawer__nav a,.drawer__label,.drawer__services a,.drawer__foot{opacity:0;transform:translateX(24px);transition:opacity .4s ease,transform .45s cubic-bezier(.2,.8,.2,1)}
+.drawer.is-open .drawer__nav a,.drawer.is-open .drawer__label,.drawer.is-open .drawer__services a,.drawer.is-open .drawer__foot{opacity:1;transform:none}
+body.no-scroll{overflow:hidden}
+@media (prefers-reduced-motion:reduce){.drawer__nav a,.drawer__label,.drawer__services a,.drawer__foot{opacity:1;transform:none}}
+
+/* smooth scrolling (as on staging.dentora-clinic.hr) */
+html{scroll-behavior:smooth}
+section[id],[id$="-upit"]{scroll-margin-top:calc(90px + env(safe-area-inset-top,0px))}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+
+/* ===== Service pages ("Ostale usluge") ===== */
+.sv-rev{transition:opacity .7s ease var(--d,0ms),transform .8s cubic-bezier(.2,.8,.2,1) var(--d,0ms)}
+.sv-rev.pre2{opacity:.001;transform:translateY(28px)}
+.svh{position:relative;padding-block:36px 96px;background:
+  radial-gradient(1200px 500px at 85% 10%,rgba(183,154,98,.16),transparent 60%),
+  linear-gradient(180deg,var(--paper),var(--bg));overflow:hidden}
+.svh-grid{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,.9fr);gap:64px;align-items:center}
+.svh-copy{display:flex;flex-direction:column;gap:22px;min-width:0}
+.svh-title{font-size:clamp(46px,5.4vw,84px)}
+.svh-title em{color:var(--gold-deep)}
+.svh-p{color:var(--muted);max-width:36em}
+.svh-cta{display:flex;gap:14px;flex-wrap:wrap;margin-top:4px}
+.toc{display:flex;flex-wrap:wrap;align-items:center;gap:8px;padding-top:22px;border-top:1px solid var(--line)}
+.toc span{font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);margin-right:6px}
+.toc a{font-size:13px;padding:8px 14px;border:1px solid var(--line);border-radius:999px;text-decoration:none;color:var(--ink);background:rgba(255,253,249,.6);transition:background .2s,border-color .2s,color .2s}
+.toc a:hover{background:var(--gold);border-color:var(--gold);color:#fff}
+.svh-media{position:relative;justify-self:end;width:min(100%,500px);padding:0 0 60px 60px}
+.svh-img{width:100%;aspect-ratio:4/5;object-fit:cover;border-radius:240px 240px 6px 6px;box-shadow:0 40px 80px -40px rgba(60,42,20,.45);animation:svIn 1s cubic-bezier(.2,.8,.2,1) both}
+.svh-img2{position:absolute;left:0;bottom:0;width:44%;aspect-ratio:1;object-fit:cover;border-radius:50%;border:8px solid var(--paper);box-shadow:var(--shadow);animation:svIn 1s .15s cubic-bezier(.2,.8,.2,1) both}
+.svh-badge{position:absolute;right:-12px;top:12%;background:rgba(255,253,249,.82);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);border:1px solid var(--line);padding:14px 18px;border-radius:14px;box-shadow:var(--shadow);display:grid;gap:2px;animation:svIn 1s .3s cubic-bezier(.2,.8,.2,1) both}
+.svh-badge b{font-family:var(--display);font-weight:400;font-size:19px}
+.svh-badge span{font-size:12px;color:var(--muted)}
+@keyframes svIn{from{opacity:0;transform:translateY(24px) scale(.98)}to{opacity:1;transform:none}}
+@media (max-width:900px){.svh-grid{grid-template-columns:1fr;gap:40px}.svh-media{justify-self:center;padding:0 0 40px 40px}.svh-badge{right:0}}
+
+.svs{padding-block:88px;border-top:1px solid var(--line)}
+.svs:nth-of-type(odd){background:var(--paper)}
+.svs-grid{display:grid;grid-template-columns:minmax(0,.8fr) minmax(0,1.2fr);gap:64px;align-items:start}
+.svs-head{position:sticky;top:calc(110px + env(safe-area-inset-top,0px));display:flex;flex-direction:column;gap:16px}
+.svs-head h2{font-size:clamp(38px,4vw,60px)}
+.svs-head .lead{font-size:16px}
+@media (max-width:900px){.svs-grid{grid-template-columns:1fr;gap:32px}.svs-head{position:static}}
+
+.svc-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}
+.svc-grid.n3>.svc:first-child{grid-column:1/-1}
+.svc{position:relative;background:var(--paper);border:1px solid var(--line);border-radius:18px;padding:28px 26px 26px;display:flex;flex-direction:column;gap:12px;overflow:hidden;transition:transform .35s cubic-bezier(.2,.8,.2,1),box-shadow .35s,border-color .35s}
+.svs:nth-of-type(odd) .svc{background:var(--bg)}
+.svc::after{content:"";position:absolute;inset:auto -40% -60% auto;width:220px;height:220px;border-radius:50%;background:radial-gradient(circle,rgba(183,154,98,.18),transparent 70%);transition:transform .5s}
+.svc:hover{transform:translateY(-4px);box-shadow:0 24px 50px -28px rgba(60,42,20,.35);border-color:rgba(168,131,79,.5)}
+.svc:hover::after{transform:scale(1.4)}
+.svc-dot{width:10px;height:10px;border-radius:50%;background:var(--gold);box-shadow:0 0 0 6px rgba(183,154,98,.16)}
+.svc h3{font-size:28px}
+.svc p{color:var(--muted);font-size:15px;line-height:1.65}
+.svc .link,.svt .link{margin-top:6px;display:inline-flex;gap:8px;align-items:center}
+.link svg{width:16px;height:16px}
+@media (max-width:600px){.svc-grid{grid-template-columns:1fr}}
+
+.tl{list-style:none;margin:0;padding:0;position:relative;display:grid;gap:0}
+.tl::before{content:"";position:absolute;left:23px;top:24px;bottom:24px;width:1px;background:linear-gradient(var(--gold),var(--line))}
+.tl li{position:relative;display:grid;grid-template-columns:48px 1fr;gap:22px;padding:0 0 30px}
+.tl li:last-child{padding-bottom:0}
+.tl-n{width:48px;height:48px;border-radius:50%;display:grid;place-items:center;background:var(--paper);border:1px solid var(--gold);font-family:var(--display);font-size:22px;color:var(--gold-deep);position:relative;z-index:1}
+.svs:nth-of-type(odd) .tl-n{background:var(--bg)}
+.tl h3{font-size:27px;margin:8px 0 8px}
+.tl p{color:var(--muted);font-size:15px;line-height:1.65;max-width:36em}
+
+.ck{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}
+.ck li{display:flex;gap:14px;padding:20px;border-radius:16px;background:var(--paper);border:1px solid var(--line)}
+.svs:nth-of-type(odd) .ck li{background:var(--bg)}
+.ck p{font-size:15px;color:var(--muted);line-height:1.6}
+.ck b{display:block;color:var(--ink);font-family:var(--display);font-weight:400;font-size:21px;line-height:1.2;margin-bottom:4px}
+.ck-i{flex:none;width:30px;height:30px;border-radius:50%;background:var(--gold);color:#fff;display:grid;place-items:center}
+.ck-i svg{width:16px;height:16px}
+@media (max-width:600px){.ck{grid-template-columns:1fr}}
+
+.svt{display:flex;flex-direction:column;gap:16px;font-size:17px;line-height:1.75;color:#4f4a43;max-width:40em}
+.svt p:first-child::first-letter{font-family:var(--display);float:left;font-size:64px;line-height:.85;padding:6px 10px 0 0;color:var(--gold-deep)}
+.good{display:flex;gap:14px;align-items:flex-start;padding:18px 20px;border-radius:16px;background:rgba(183,154,98,.12);border:1px solid var(--line);color:var(--ink);font-size:16px}
+
+.svs-call{background:var(--bg)!important}
+.callout{display:grid;grid-template-columns:minmax(0,.8fr) minmax(0,1.2fr);gap:48px;align-items:center;padding:44px;border-radius:24px;background:linear-gradient(120deg,var(--sand),var(--paper));border:1px solid var(--line)}
+.callout>div:last-child{display:flex;flex-direction:column;gap:18px;align-items:flex-start;color:var(--muted)}
+@media (max-width:800px){.callout{grid-template-columns:1fr;gap:20px;padding:28px}}
+
+.svq{padding-block:96px;border-top:1px solid var(--line)}
+.svq blockquote{margin:0 auto;max-width:960px;text-align:center;position:relative}
+.q-mark{display:block;font-family:var(--display);font-size:110px;line-height:.6;color:var(--gold);height:46px}
+.svq p{font-family:var(--display);font-size:clamp(28px,3.4vw,46px);line-height:1.18;letter-spacing:-.02em}
+.svq cite{display:block;margin-top:22px;font-style:normal;font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:var(--gold-deep)}
+
+.svcta{padding-block:0 96px}
+.svcta-in{display:grid;grid-template-columns:minmax(0,1.3fr) auto;gap:40px;align-items:center;padding:56px;border-radius:28px;color:#f3ece2;background:
+  radial-gradient(600px 300px at 90% 0%,rgba(217,185,127,.28),transparent 60%),var(--ink);border-top:3px solid var(--gold)}
+.svcta-in .eyebrow{color:#d9b97f}
+.svcta-in h2{color:#fff}
+.svcta-in h2 em{color:#d9b97f}
+.svcta-in p:not(.eyebrow){color:#c9bfb2;margin-top:12px}
+.svcta-b{display:flex;flex-direction:column;gap:12px;min-width:220px}
+.btn-ghost{background:transparent;color:#fff;border-color:rgba(255,255,255,.35)}
+.btn-ghost:hover{background:#fff;color:var(--ink)}
+.svcta-b .btn{justify-content:center}
+@media (max-width:800px){.svcta-in{grid-template-columns:1fr;padding:32px 24px}.svcta-b{min-width:0}}
+
+.svo{padding-block:0 96px}
+.svo-nav{display:flex;gap:8px}
+.svo-btn{width:48px;height:48px;border-radius:50%;border:1px solid var(--line);background:var(--paper);font-size:18px;cursor:pointer;color:var(--ink);transition:background .2s,color .2s}
+.svo-btn:hover{background:var(--gold);color:#fff}
+.svo-row{display:grid;grid-auto-flow:column;grid-auto-columns:minmax(260px,1fr);gap:16px;overflow-x:auto;scroll-snap-type:x mandatory;padding-bottom:8px;scrollbar-width:none}
+.svo-row::-webkit-scrollbar{display:none}
+@media (min-width:1100px){.svo-row{grid-auto-columns:calc((100% - 48px)/4)}}
+.svo-card{position:relative;scroll-snap-align:start;border-radius:20px;overflow:hidden;aspect-ratio:3/4;text-decoration:none;color:#fff;display:block;isolation:isolate}
+.svo-card img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:-2;transition:transform .8s cubic-bezier(.2,.8,.2,1)}
+.svo-card::before{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(180deg,transparent 35%,rgba(28,22,16,.82))}
+.svo-card:hover img{transform:scale(1.06)}
+.svo-txt{position:absolute;left:22px;right:70px;bottom:22px;display:grid;gap:6px}
+.svo-txt b{font-family:var(--display);font-weight:400;font-size:26px;line-height:1.08}
+.svo-txt small{font-size:12px;opacity:.8}
+.svo-arr{position:absolute;right:20px;bottom:22px;width:42px;height:42px;border-radius:50%;background:rgba(255,255,255,.18);backdrop-filter:blur(6px);display:grid;place-items:center;transition:background .3s,transform .3s}
+.svo-arr svg{width:18px;height:18px}
+.svo-card:hover .svo-arr{background:var(--gold);transform:rotate(-45deg)}
+
+/* home: "Ostale usluge" list with hover preview */
+.olist a{align-items:center}
+.ol-l{display:flex;align-items:center;gap:18px;min-width:0}
+.ol-thumb{flex:none;width:56px;height:56px;border-radius:50%;object-fit:cover;transition:transform .4s}
+.olist a:hover .ol-thumb{transform:scale(1.08)}
+.ol-t{display:grid;gap:2px;min-width:0}
+.ol-t small{font-family:var(--sans);font-size:13px;color:var(--muted);letter-spacing:0}
+.ol-preview{position:fixed;left:0;top:0;width:240px;aspect-ratio:3/4;border-radius:18px;object-fit:cover;pointer-events:none;z-index:40;opacity:0;transform:translate(-50%,-50%) scale(.85);transition:opacity .25s,transform .35s cubic-bezier(.2,.8,.2,1);box-shadow:0 30px 60px -20px rgba(0,0,0,.35)}
+.ol-preview.on{opacity:1;transform:translate(-50%,-50%) scale(1)}
+@media (hover:none),(max-width:860px){.ol-preview{display:none}}
+@media (prefers-reduced-motion:reduce){.svh-img,.svh-img2,.svh-badge{animation:none}.sv-rev.pre2{opacity:1;transform:none}}
+
+/* ===== Hero: full-bleed sticky portrait of dr. Božana ===== */
+:where(#home > section){position:relative;z-index:1;background-color:var(--bg)}
+#home > section{box-shadow:0 -30px 60px -40px rgba(43,37,32,.25)}
+.hero--photo{position:sticky;top:calc(78px + env(safe-area-inset-top,0px));z-index:0;height:calc(100svh - 78px);min-height:600px;max-height:1100px;overflow:hidden;background:#f1efeb}
+.hero--photo .hero-bg{position:absolute;inset:0 auto 0 0;width:68%;-webkit-mask-image:linear-gradient(90deg,#000 62%,transparent 98%);mask-image:linear-gradient(90deg,#000 62%,transparent 98%)}
+.hero--photo .hero-bg img{width:100%;height:100%;object-fit:cover;object-position:50% 14%;animation:heroZoom 1.8s cubic-bezier(.2,.8,.2,1) both}
+@keyframes heroZoom{from{transform:scale(1.07);opacity:.4}to{transform:none;opacity:1}}
+.hero--photo::after{content:"";position:absolute;inset:0;pointer-events:none;background:radial-gradient(900px 600px at 85% 50%,rgba(247,243,236,.9),transparent 70%)}
+.hero--photo .hero-grid{position:relative;z-index:2;height:100%;display:flex;align-items:center;justify-content:flex-end}
+.hero--photo .hero-copy{max-width:560px;padding-block:40px}
+.hero-tag{position:absolute;z-index:3;left:max(24px,4vw);bottom:40px;display:grid;gap:2px;padding:14px 20px;border-radius:14px;background:rgba(255,253,249,.72);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border:1px solid rgba(255,255,255,.6);box-shadow:0 20px 40px -24px rgba(43,37,32,.4);animation:svIn 1s .6s cubic-bezier(.2,.8,.2,1) both}
+.hero-tag b{font-family:var(--display);font-weight:400;font-size:20px}
+.hero-tag span{font-size:12px;color:var(--muted)}
+@media (max-width:1100px){.hero--photo .hero-bg{width:78%}.hero--photo .hero-copy{max-width:480px}}
+@media (max-width:860px){
+  .hero--photo{position:relative;top:auto;height:auto;min-height:0;max-height:none;overflow:clip;background:var(--bg)}
+  .hero--photo::after{display:none}
+  .hero--photo .hero-bg{position:sticky;top:calc(78px + env(safe-area-inset-top,0px));display:block;width:100%;height:66svh;z-index:0;-webkit-mask-image:none;mask-image:none}
+  .hero--photo .hero-bg img{object-position:40% 10%}
+  .hero--photo .hero-grid{display:block;height:auto;margin-top:-20svh;padding-top:90px;background:linear-gradient(180deg,rgba(247,243,236,0) 0,rgba(247,243,236,.92) 70px,var(--bg) 120px)}
+  .hero--photo .hero-copy{padding-block:0 40px;gap:18px;max-width:none}
+  .hero-tag{left:auto;right:16px;bottom:auto;top:16px;padding:10px 14px}
+  .hero-tag b{font-size:16px}
+}
+@media (prefers-reduced-motion:reduce){.hero--photo .hero-bg img,.hero-tag{animation:none}}
+
+/* ===== O nama: team ===== */
+.team-grid{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:80px;align-items:center}
+.team-media{position:relative;margin:0 0 30px}
+.team-media picture{display:block}
+.team-main{width:100%;height:auto;aspect-ratio:4/5;object-fit:cover;object-position:50% 35%;border-radius:24px;box-shadow:0 50px 90px -50px rgba(43,37,32,.5)}
+.team-small{position:absolute;right:0;bottom:-40px;width:42%;aspect-ratio:3/4;object-fit:cover;border-radius:18px;border:8px solid var(--bg);box-shadow:var(--shadow)}
+.team-tag{position:absolute;left:24px;bottom:-26px;box-shadow:var(--shadow);display:grid;gap:2px;padding:12px 18px;border-radius:14px;background:rgba(255,253,249,.75);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border:1px solid rgba(255,255,255,.6)}
+.team-tag b{font-family:var(--display);font-weight:400;font-size:19px}
+.team-tag span{font-size:12px;color:var(--muted)}
+.about-copy h2 em{font-style:italic;color:var(--gold-deep)}
+.team-vals{list-style:none;margin:6px 0 0;padding:0;display:grid;border-top:1px solid var(--line)}
+.team-vals li{display:flex;gap:16px;align-items:baseline;padding:14px 0;border-bottom:1px solid var(--line);font-size:15px}
+.team-vals span{font-family:var(--display);color:var(--gold);font-size:18px}
+@media (max-width:900px){.team-grid{grid-template-columns:1fr;gap:72px}.team-media{max-width:520px}}
+
+/* ===== QA fixes ===== */
+:root{--gold-btn:#8a6a3f;--gold-btn-h:#735733;--gold-deep:#7f5e33}
+.btn-gold{background:var(--gold-btn);border-color:var(--gold-btn)}
+.btn-gold:hover{background:var(--gold-btn-h);border-color:var(--gold-btn-h)}
+.btn-line{border-color:var(--gold-btn)}
+.btn-line:hover{background:var(--gold-btn);border-color:var(--gold-btn)}
+.tabs button[aria-selected=true],.tag.r{background:var(--gold-btn)}
+.stars{color:#b07d00}
+.tabs button{min-height:44px}
+.rv-more{padding:12px 0;min-height:44px}
+.link{min-height:44px}
+.toc a{min-height:44px;display:inline-flex;align-items:center}
+.modal-x{width:44px;height:44px}
+.info dd a{color:inherit;text-decoration:underline;text-decoration-color:var(--line);text-underline-offset:3px}
+.svt{max-width:34em}
+.ba-grid{align-items:start}
+.hero--photo .feats{background:rgba(255,253,249,.72);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);border:1px solid rgba(255,255,255,.6);border-radius:16px;padding:16px 6px;max-width:560px}
+.hero--photo .feat{color:#5d5f57}
+/* tablet: core cards side-by-side image/text instead of a narrow left column */
+@media (max-width:900px){.core-grid{max-width:none}}
+@media (min-width:601px) and (max-width:900px){.tc{flex-direction:row;align-items:stretch}.tc img{width:38%;height:auto;aspect-ratio:1/1;object-fit:cover;flex:none}}
+/* core pages: real reviews */
+.lp-rv{background:var(--sand);padding-block:88px}
+.lp-rv-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px;align-items:start}
+@media (max-width:900px){.lp-rv-grid{grid-template-columns:1fr}}
+#views .svcta{padding-top:96px}
+/* mobile: readable text, bigger buttons, fixed booking bar */
+.logo{display:inline-flex;align-items:center;min-height:44px}
+.mbar{display:none}
+@media (max-width:860px){
+  .mbar{display:grid;grid-template-columns:auto 1fr;gap:10px;position:fixed;left:0;right:0;bottom:0;z-index:70;padding:10px max(14px,env(safe-area-inset-right,0px)) calc(10px + env(safe-area-inset-bottom,0px)) max(14px,env(safe-area-inset-left,0px));background:rgba(255,253,249,.94);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border-top:1px solid var(--line);box-shadow:0 -10px 30px -20px rgba(43,37,32,.4)}
+  .mbar a,.mbar button{min-height:48px;border-radius:999px;display:inline-flex;align-items:center;justify-content:center;gap:8px;font:600 15px var(--sans);text-decoration:none;cursor:pointer}
+  .mbar-call{padding:0 18px;border:1px solid var(--gold-btn);color:var(--gold-deep);background:transparent}
+  .mbar-call svg{width:18px;height:18px}
+  .mbar-book{border:0;background:var(--gold-btn);color:#fff}
+  body{padding-bottom:calc(70px + env(safe-area-inset-bottom,0px))}
+  .hero--photo .hero-bg{height:56svh}
+  .btn{font-size:15px}
+}
+@media (max-width:600px){
+  #home p:not(.eyebrow):not(.qnum):not(.crumb),#home li,#views p:not(.eyebrow):not(.qnum):not(.crumb),#views li{font-size:16px}
+  .ck b{font-size:20px}
+}
+
+/* form states */
+.hp{position:absolute!important;left:-9999px!important;width:1px;height:1px;overflow:hidden}
+.form{position:relative}
+.form label.bad input,.form label.bad select,.form label.bad textarea{border-color:#b3261e;outline:2px solid rgba(179,38,30,.15)}
+.form-msg{margin:0;padding:12px 14px;border-radius:3px;font-size:15px;text-transform:none;letter-spacing:0}
+.form-msg.is-err{background:#fbeeec;color:#8c1d16;border:1px solid #f0c9c4}
+.form button[disabled]{opacity:.7;cursor:wait}
+</style>
+
+<header>
+  <div class="wrap nav">
+    <a class="logo" href="#pocetna" aria-label="Dentora Clinic, početna"><img src="{{logo_zlatni.png}}" alt="Dentora Clinic"></a>
+    <ul class="menu" id="menu">
+      <li><a href="#aligneri" data-nav="aligneri">Aligneri</a></li>
+      <li><a href="#ljuskice" data-nav="ljuskice">Ljuskice</a></li>
+      <li><a href="#izbjeljivanje" data-nav="izbjeljivanje">Izbjeljivanje</a></li>
+      <li><a href="#usluge">Ostale usluge</a></li>
+      <li><a href="#onama">O nama</a></li>
+      <li><a href="#kontakt">Kontakt</a></li>
+    </ul>
+    <div class="nav-r">
+      <a class="btn btn-gold" href="#kontakt" data-open-form>Naručite se <span class="arr">→</span></a>
+      <span class="lang">HR</span>
+      <button class="burger" id="burger" aria-label="Otvori izbornik" aria-expanded="false" aria-controls="drawer"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h10"/></svg></button>
+    </div>
+  </div>
+</header>
+<div class="drawer" id="drawer" aria-hidden="true">
+  <div class="drawer__backdrop" data-drawer-close></div>
+  <div class="drawer__panel" role="dialog" aria-modal="true" aria-label="Izbornik">
+    <div class="drawer__top">
+      <img src="{{logo_zlatni.png}}" alt="Dentora Clinic">
+      <button type="button" class="drawer__x" data-drawer-close aria-label="Zatvori izbornik"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg></button>
+    </div>
+    <nav class="drawer__nav" aria-label="Mobilna navigacija">
+      <a href="#pocetna">Početna</a>
+      <a href="#aligneri">Prozirni aligneri</a>
+      <a href="#ljuskice">Keramičke ljuskice</a>
+      <a href="#izbjeljivanje">Izbjeljivanje zubi</a>
+      <a href="#onama">O nama</a>
+      <a href="#kontakt">Kontakt</a>
+    </nav>
+    <p class="drawer__label">Ostale usluge</p>
+    <div class="drawer__services">
+      <a href="#restaurativna">Restaurativna stomatologija i endodoncija</a>
+      <a href="#oralna-kirurgija">Oralna kirurgija i implantologija</a>
+      <a href="#protetika">Protetika</a>
+      <a href="#parodontologija">Parodontologija</a>
+      <a href="#djecja">Dječja i preventivna stomatologija</a>
+      <a href="#ortodoncija">Ortodoncija</a>
+    </div>
+    <div class="drawer__foot">
+      <button type="button" class="btn btn-gold" data-open-form>Naručite se <span class="arr">→</span></button>
+      <a class="btn btn-line" href="tel:+385919487770">091 948 7770</a>
+    </div>
+  </div>
+</div>
+
+<main id="home">
+<div class="hero hero--photo">
+  <picture class="hero-bg">
+    <source media="(max-width:860px)" srcset="{{dr-bozana-jelic-rubil-stomatologinja-dentora-clinic-zagreb-900.avif}}">
+    <img src="{{dr-bozana-jelic-rubil-stomatologinja-dentora-clinic-zagreb-1600.avif}}" alt="Dr. Božana Jelić Rubil, stomatologinja u Dentora Clinicu" fetchpriority="high" width="1600" height="2400">
+  </picture>
+  <div class="hero-tag"><b>Dr. Božana Jelić Rubil</b><span>dr. med. dent. · osnivačica Dentora Clinica</span></div>
+  <div class="wrap hero-grid">
+    <div class="hero-copy">
+      <p class="eyebrow">Estetska stomatologija · Zagreb</p>
+      <h1 class="hero-title">Bolji život<br> počinje s lijepim<br> <em>osmijehom.</em></h1>
+      <p class="lead">Prirodni rezultati, individualan pristup i suvremene metode za osmijeh koji se uklapa u vaš stil života.</p>
+      <div style="display:flex;gap:14px;flex-wrap:wrap"><a class="btn btn-gold" href="#kontakt" data-open-form>Naručite se <span class="arr">→</span></a><a class="btn btn-line" href="#kviz">Koji tretman je za mene?</a></div>
+      <div class="feats">
+        <div class="feat"><svg viewBox="0 0 32 32"><path d="M10 4c-4 0-6 3-6 7 0 5 3 7 3 12 0 3 1 6 3 6s2-4 3-7 1-4 3-4 2 1 3 4 1 7 3 7 3-3 3-6c0-5 3-7 3-12 0-4-2-7-6-7-3 0-4 2-6 2s-3-2-6-2z"/></svg>Prirodni rezultati</div>
+        <div class="feat"><svg viewBox="0 0 32 32"><circle cx="16" cy="10" r="5"/><path d="M6 28c0-6 4-10 10-10s10 4 10 10"/></svg>Individualan pristup</div>
+        <div class="feat"><svg viewBox="0 0 32 32"><path d="M6 12l5-6h10l5 6-10 15z"/><path d="M6 12h20M13 6l-2 6 5 15 5-15-2-6"/></svg>Suvremene metode</div>
+        <div class="feat"><svg viewBox="0 0 32 32"><path d="M16 27S4 20 4 11.5C4 7.5 7 5 10.5 5c2.5 0 4.3 1.4 5.5 3.2C17.2 6.4 19 5 21.5 5 25 5 28 7.5 28 11.5 28 20 16 27 16 27z"/></svg>Povjerenje pacijenata</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<section class="core" id="tretmani">
+  <div class="wrap">
+    <div class="head">
+      <div><p class="eyebrow">Naši ključni tretmani</p><h2>Tri puta do novog osmijeha</h2></div>
+      <a class="link" href="#kviz">Ne znate što odabrati? Riješite kviz <span class="arr">→</span></a>
+    </div>
+    <div class="core-grid">
+      <a class="tc reveal" href="#aligneri">
+        <img src="{{prozirni-aligneri-ispravljanje-zubi-zagreb.avif}}" alt="Prozirni aligneri u ruci doktorice">
+        <div class="tc-body">
+          <p class="eyebrow">Ortodoncija</p>
+          <h3>Prozirni aligneri</h3>
+          <p>Ravni zubi bez bravica. Folije se gotovo ne vide i skidate ih za jelo.</p>
+          <span class="link">Saznajte više <span class="arr">→</span></span>
+        </div>
+      </a>
+      <a class="tc tc-main reveal" href="#ljuskice">
+        <img src="{{model-zuba-u-stomatoloskoj-ordinaciji-zagreb.avif}}" alt="Model zuba u ordinaciji">
+        <div class="tc-body">
+          <p class="eyebrow">Estetika</p>
+          <h3>Keramičke ljuskice</h3>
+          <p>Nova boja, oblik i simetrija osmijeha. Izrađene posebno za svaki zub.</p>
+          <span class="link">Saznajte više <span class="arr">→</span></span>
+        </div>
+      </a>
+      <a class="tc reveal" href="#izbjeljivanje">
+        <img src="{{2.webp}}" alt="Bijeli zubi nakon izbjeljivanja">
+        <div class="tc-body">
+          <p class="eyebrow">Estetika</p>
+          <h3>Izbjeljivanje zubi</h3>
+          <p>Svjetliji osmijeh u jednom posjetu, pod nadzorom doktorice.</p>
+          <span class="link">Saznajte više <span class="arr">→</span></span>
+        </div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<section class="ba" id="rezultati">
+  <div class="wrap">
+    <div class="head">
+      <div><p class="eyebrow">Naši radovi</p><h2>Razlika koju vidite odmah.</h2></div>
+      
+    </div>
+    <div class="ba-grid">
+      <div>
+        <div data-panel="izb">
+          <div class="cmp" data-slider style="--pos:50%">
+            <img class="after" src="{{2.webp}}" alt="Zubi nakon izbjeljivanja">
+            <img class="before" src="{{1.webp}}" alt="Zubi prije izbjeljivanja">
+            <span class="tag l">Prije</span><span class="tag r">Poslije</span>
+            <div class="bar"></div>
+            <div class="knob" role="slider" tabindex="0" aria-label="Usporedba prije i poslije" aria-valuemin="0" aria-valuemax="100" aria-valuenow="50"><svg viewBox="0 0 26 26"><path d="M9 7l-6 6 6 6M17 7l6 6-6 6"/></svg></div>
+          </div>
+          <p class="hint"><span class="arr">↔</span> Povucite klizač za usporedbu</p>
+          <div class="cases" role="group" aria-label="Odaberite primjer">
+            <button class="case" aria-pressed="true" data-b="{{1.webp}}" data-a="{{2.webp}}" aria-label="Primjer 1"><img src="{{2.webp}}" alt=""></button>
+            <button class="case" aria-pressed="false" data-b="{{3.webp}}" data-a="{{4.webp}}" aria-label="Primjer 2"><img src="{{4.webp}}" alt=""></button>
+            <button class="case" aria-pressed="false" data-b="{{7.webp}}" data-a="{{8.webp}}" aria-label="Primjer 3"><img src="{{8.webp}}" alt=""></button>
+          </div>
+        </div>
+      </div>
+      <div class="ba-copy">
+        <div class="facts">
+          <div><b>Pregled</b><span>procjena stanja i željenog rezultata</span></div>
+          <div><b>Plan</b><span>prilagođen vašem osmijehu</span></div>
+          <div><b>Tretman</b><span>u ordinaciji, pod nadzorom doktorice</span></div>
+          <div><b>Kontrola</b><span>i savjeti kako zadržati rezultat</span></div>
+        </div>
+        <div><button type="button" class="btn btn-gold" data-open-form>Želim ovakav osmijeh <span class="arr">→</span></button></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="quiz" id="kviz">
+  <div class="wrap quiz-grid">
+    <div class="quiz-intro">
+      <p class="eyebrow">Kviz · 3 pitanja</p>
+      <h2>Koji tretman je za mene?</h2>
+      <p class="lead">Odgovorite na tri kratka pitanja i saznajte koji tretman najbolje odgovara onome što želite promijeniti.</p>
+    </div>
+    <div class="quiz-card" id="quiz" aria-live="polite"></div>
+  </div>
+</section>
+
+<section class="mk">
+  <div class="wrap">
+    <div class="head">
+      <div><p class="eyebrow">Paket · Smile makeover</p><h2>Sva tri tretmana, jedan plan.</h2><p class="lead">Za potpunu promjenu osmijeha tretmane radimo redom kojim daju najbolji rezultat, u jednom planu liječenja.</p></div>
+      <button type="button" class="btn btn-gold" data-open-form>Dogovorite konzultacije <span class="arr">→</span></button>
+    </div>
+    <ol class="mk-steps">
+      <li><span class="mk-n">1</span><div><h3>Aligneri</h3><p>Najprije poravnamo zube, kako bi daljnji zahvati bili što manje invazivni.</p></div></li>
+      <li><span class="mk-n">2</span><div><h3>Izbjeljivanje</h3><p>Zatim posvijetlimo prirodne zube, jer se boja ljuskica usklađuje s njima.</p></div></li>
+      <li><span class="mk-n">3</span><div><h3>Ljuskice</h3><p>Na kraju, gdje je potrebno, ljuskicama dovršimo oblik i simetriju osmijeha.</p></div></li>
+    </ol>
+  </div>
+</section>
+
+
+<section id="onama" class="team">
+  <div class="wrap team-grid">
+    <figure class="team-media reveal">
+      <picture>
+        <source media="(max-width:860px)" srcset="{{tim-dentora-clinic-stomatoloska-ordinacija-zagreb-800.avif}}">
+        <img class="team-main" src="{{tim-dentora-clinic-stomatoloska-ordinacija-zagreb-1400.avif}}" alt="Tim Dentora Clinica u ordinaciji" loading="lazy" width="1400" height="2100">
+      </picture>
+      <figcaption class="team-tag"><b>Tim Dentora Clinic</b><span>Dankovečka 6, Zagreb</span></figcaption>
+    </figure>
+    <div class="about-copy reveal">
+      <p class="eyebrow">Naš tim</p>
+      <h2>Stručnost, povjerenje <em>i posvećenost.</em></h2>
+      <p class="lead">U Dentora Clinicu spajamo znanje, iskustvo i suvremene metode kako bismo svakom pacijentu pružili individualan pristup i vrhunske rezultate.</p>
+      <p style="color:var(--muted);max-width:34em">Svaki plan liječenja počinje razgovorom. Pregledamo snimke s vama, objasnimo mogućnosti i zajedno odaberemo rješenje koje odgovara vašem osmijehu, vremenu i budžetu.</p>
+      <ul class="team-vals">
+        <li><span>01</span>Razgovor i plan liječenja prije svakog zahvata</li>
+        <li><span>02</span>Digitalna dijagnostika i suvremene metode</li>
+        <li><span>03</span>Ugodna, mirna atmosfera za cijelu obitelj</li>
+      </ul>
+      <p class="sig">Božana Jelić Rubil, dr. med. dent.</p>
+      <div><button type="button" class="btn btn-gold" data-open-form>Upoznajte nas na pregledu <span class="arr">→</span></button></div>
+    </div>
+  </div>
+</section>
+
+<section class="reviews">
+  <div class="wrap">
+    <div class="head">
+      <div><p class="eyebrow">Što naši pacijenti kažu</p><h2>Iskustva naših pacijenata</h2></div>
+      <div class="gbadge"><span class="g">G</span><div><small>Google recenzije</small><strong>5.0</strong> <span class="stars">★★★★★</span> <small style="display:inline">(55)</small></div></div>
+    </div>
+    <div class="rv-row">
+      <article class="rv"><div class="rv-top"><span class="av" style="background:#3c8c5a">C</span><div><b>Concetta BS</b><small>prije 7 mjeseci</small></div></div><span class="stars" aria-label="5 od 5 zvjezdica">★★★★★</span><p class="rv-text">Predivno iskustvo u poliklinici svaki put!  Dr. Božana je vrlo profesionalna, nježna i pažljiva prema pacijentima. Zahvat koji smo radili je prošao bezbolno i uz puno povjerenje. Svaki put se vraćam bez razmišljanja.❤️</p><button type="button" class="rv-more" hidden>Prikaži više</button></article>
+      <article class="rv"><div class="rv-top"><span class="av" style="background:#7b5ea7">K</span><div><b>Kristina Grbeša</b><small>prije 6 mjeseci</small></div></div><span class="stars" aria-label="5 od 5 zvjezdica">★★★★★</span><p class="rv-text">Ostvarenje životnog sna uz vrhunsku stručnost i povjerenje<br><br>Nakon 42 godine, napokon imam osmijeh kakav sam oduvijek željela, a sve to zahvaljujući stručnosti i viziji moje doktorice Božane Jelić Rubil.<br>Moja priča započela je s velikim izazovom – zbog alergije na sve vrste metala, klasični aparatići za zube za mene nisu bili opcija. Godinama su me uvjeravali da nema rješenja, sve dok nisam upoznala doktoricu koja mi je s potpunim samopouzdanjem preporučila Invisalign. Toliko sam bila oduševljena što napokon postoji rješenje da sam terapiju uplatila odmah, a rezultat je bio savršeno ravni zubi.<br>Kada je doktorica otvorila vlastitu ordinaciju Dentora Clinic, niti sekunde nisam dvojila hoću li nastaviti put s njom. Povjerenje koje smo izgradile bilo mi je presudno. U novom, prekrasnom prostoru, koji odiše toplinom i u kojem se osjećate ugodno &quot;kao kod kuće&quot;, završile smo moju transformaciju.<br>Doktorica mi je napravila:<br>•	Dubinsku kiretažu kamenca (ispod zubnog mesa) za cijelu čeljust,<br>•	Ordinacijsko izbjeljivanje,<br>•	Injekcijsku tehniku na prednja četiri zuba kojom je moj osmijeh dobio savršen oblik i estetiku.<br>Osoblje je iznimno profesionalno, a istovremeno nevjerojatno pristupačno. Rijetkost je pronaći mjesto gdje se vrhunska tehnologija i preciznost spajaju s takvim ljudskim pristupom. Ako tražite stomatologa kojem ćete bez straha povjeriti svoje zdravlje i ljepotu, od srca preporučujem Dentora Clinic i dr. Jelić Rubil.<br>Hvala vam što ste mi omogućili da se napokon smijem s punim samopouzdanjem!<br><br>Vaša Kristina</p><button type="button" class="rv-more" hidden>Prikaži više</button></article>
+      <article class="rv"><div class="rv-top"><span class="av" style="background:#c0603a">L</span><div><b>Lorena Žinić</b><small>prije 6 mjeseci</small></div></div><span class="stars" aria-label="5 od 5 zvjezdica">★★★★★</span><p class="rv-text">Došla sam na preporuku i nisam požalila. Imam samo sve najbolje riječi za dr. Božanu. Odradile smo ortodonsku terapiju sa simply smile alignerima. Kroz cijeli proces je uvijek bila na raspolaganju za sva moja pitanja. Nisam se nikad osjećala ovako ugodno u stomatološkoj ordinaciji. Hvala puno!</p><button type="button" class="rv-more" hidden>Prikaži više</button></article>
+      <article class="rv"><div class="rv-top"><span class="av" style="background:#2f7fa8">I</span><div><b>Ivana Cota</b><small>prije 6 mjeseci</small></div></div><span class="stars" aria-label="5 od 5 zvjezdica">★★★★★</span><p class="rv-text">Za doktoricu Božanu imam samo riječi hvale. Izuzetno je stručna, pažljiva i posvećena pacijentu. Nježan i stručan pristup doktorice ulijeva povjerenje i uvelike pomaže u otklanjanju straha.<br>Već pri samom ulasku u ordinaciju osjeti se ugodna i opuštajuća atmosfera.<br>Doktorica detaljno i jasno objasni svaki korak te odgovori na svako pitanje.<br>Iskrene i tople preporuke za doktoricu Božanu Jelić Rubil i njezinu ordinaciju!<br>U ordinaciji Dentora Clinic ste u sigurnim rukama! 😃</p><button type="button" class="rv-more" hidden>Prikaži više</button></article>
+      <article class="rv"><div class="rv-top"><span class="av" style="background:#a8834f">S</span><div><b>Silvija Juričić</b><small>prije 6 mjeseci</small></div></div><span class="stars" aria-label="5 od 5 zvjezdica">★★★★★</span><p class="rv-text">Divna, smirena doktorica koja ulijeva povjerenje od prvog susreta. Ako ste ikada imali strah od zubara doktorica će vam promjeniti mišljenje. Jedino mjesto gdje mogu dovesti i svoju djecu, a da obavimo sve bez drame i suza. Prostor nov i moderan i ne osjećate se kao da ste došli na stomatološki zahvat. Za svaku preporuku!</p><button type="button" class="rv-more" hidden>Prikaži više</button></article>
+    </div>
+    <p style="margin-top:24px"><a class="link" href="https://www.google.com/maps/place/Dentora+Clinic/@45.8310366,16.0565582,17z/data=!4m8!3m7!1s0x476679bd9ea76eff:0x2363f2757f5fce74!8m2!3d45.8310366!4d16.0565582!9m1!1b1" target="_blank" rel="noopener">Sve recenzije na Googleu <span class="arr">↗</span></a></p>
+  </div>
+</section>
+
+<section id="usluge" class="other">
+  <div class="wrap other-grid">
+    <div>
+      <p class="eyebrow">Ostale usluge</p>
+      <h2>Kompletna stomatološka skrb</h2>
+      <p class="lead" style="margin-top:16px">Osim estetskih tretmana, brinemo o zdravlju zubi cijele obitelji.</p>
+    </div>
+    <ul class="olist">
+      <li><a href="#restaurativna" data-prev="{{ortopan-rendgenska-snimka-zubi-objasnjenje-pacijentu-zagreb.avif}}"><span class="ol-l"><img class="ol-thumb" src="{{ortopan-rendgenska-snimka-zubi-objasnjenje-pacijentu-zagreb.avif}}" alt="" loading="lazy"><span class="ol-t"><span>Restaurativna stomatologija i endodoncija</span><small>Ispuni, liječenje kanala i očuvanje zuba</small></span></span><span class="arr">→</span></a></li>
+      <li><a href="#oralna-kirurgija" data-prev="{{3d-digitalni-sken-zubi-na-ekranu-zagreb.avif}}"><span class="ol-l"><img class="ol-thumb" src="{{3d-digitalni-sken-zubi-na-ekranu-zagreb.avif}}" alt="" loading="lazy"><span class="ol-t"><span>Oralna kirurgija i implantologija</span><small>Implantati, umnjaci, apikotomija</small></span></span><span class="arr">→</span></a></li>
+      <li><a href="#protetika" data-prev="{{stomatoloske-konzultacije-s-pacijenticom-zagreb.avif}}"><span class="ol-l"><img class="ol-thumb" src="{{stomatoloske-konzultacije-s-pacijenticom-zagreb.avif}}" alt="" loading="lazy"><span class="ol-t"><span>Protetika</span><small>Krunice, mostovi, ljuskice</small></span></span><span class="arr">→</span></a></li>
+      <li><a href="#parodontologija" data-prev="{{4.webp}}"><span class="ol-l"><img class="ol-thumb" src="{{4.webp}}" alt="" loading="lazy"><span class="ol-t"><span>Parodontologija</span><small>Gingivitis, parodontitis, uklanjanje kamenca</small></span></span><span class="arr">→</span></a></li>
+      <li><a href="#djecja" data-prev="{{djecja-stomatologija-sretan-djecak-u-stomatoloskom-stolcu-zagreb.avif}}"><span class="ol-l"><img class="ol-thumb" src="{{djecja-stomatologija-sretan-djecak-u-stomatoloskom-stolcu-zagreb.avif}}" alt="" loading="lazy"><span class="ol-t"><span>Dječja i preventivna stomatologija</span><small>Fluoridacija, pečaćenje fisura, mliječni zubi</small></span></span><span class="arr">→</span></a></li>
+      <li><a href="#ortodoncija" data-prev="{{prozirni-aligneri-ispravljanje-zubi-zagreb.avif}}"><span class="ol-l"><img class="ol-thumb" src="{{prozirni-aligneri-ispravljanje-zubi-zagreb.avif}}" alt="" loading="lazy"><span class="ol-t"><span>Ortodoncija</span><small>Clear aligneri, fiksne naprave, retencija</small></span></span><span class="arr">→</span></a></li>
+    </ul>
+    <img class="ol-preview" id="olPrev" alt="" aria-hidden="true">
+  </div>
+</section>
+
+
+<section class="tech">
+  <div class="wrap tech-grid">
+    <img class="reveal" src="{{moderna-stomatoloska-ordinacija-interijer-zagreb.avif}}" alt="Interijer ordinacije Dentora Clinic">
+    <div class="reveal">
+      <p class="eyebrow" style="color:#d9b97f">Digitalna ordinacija</p>
+      <h2>Bez gumenih otisaka. Bez nagađanja.</h2>
+      <p class="lead" style="margin-top:18px">Dijagnostiku i planiranje radimo digitalno, pa rezultat vidite prije nego što započnemo.</p>
+      <ul class="tlist">
+        <li><b>Intraoralni skener</b><span>Precizan 3D otisak zuba u nekoliko minuta, bez neugodne paste.</span></li>
+        <li><b>3D planiranje</b><span>Plan aligner terapije i protetike vidite na ekranu prije početka.</span></li>
+        <li><b>Digitalni RTG</b><span>Ortopan snimku pregledavamo zajedno s vama, uz manje zračenja.</span></li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section id="kontakt">
+  <div class="wrap cta-grid">
+    <div style="display:flex;flex-direction:column;gap:22px" class="reveal">
+      <p class="eyebrow">Kontakt</p>
+      <h2>Prvi korak do novog osmijeha.</h2>
+      <p class="lead">Javite nam se telefonom ili e-mailom i dogovorite pregled u terminu koji vam odgovara.</p>
+      <div style="display:flex;gap:14px;flex-wrap:wrap"><a class="btn btn-gold" href="tel:+385919487770">Nazovite nas <span class="arr">→</span></a><button type="button" class="btn btn-line" data-open-form>Pošaljite upit</button></div>
+    </div>
+    <dl class="info reveal">
+      <div><dt>Adresa</dt><dd>Dankovečka ul. 6, 10040 Zagreb</dd></div>
+      <div><dt>Telefon</dt><dd><a href="tel:+385919487770">091 948 7770</a></dd></div>
+      <div><dt>E-mail</dt><dd><a href="mailto:info@dentora-clinic.hr">info@dentora-clinic.hr</a></dd></div>
+      <div><dt>Radno vrijeme</dt><dd>pon – pet: 08 – 20 h<br>sub – ned: zatvoreno</dd></div>
+    </dl>
+  </div>
+</section>
+</main>
+<div id="views" hidden></div>
+<nav class="mbar" aria-label="Brzi kontakt">
+  <a class="mbar-call" href="tel:+385919487770"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.4 1.8.7 2.7a2 2 0 0 1-.5 2.1L8 9.8a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.7.7a2 2 0 0 1 1.7 2z"/></svg>Nazovite</a>
+  <button type="button" class="mbar-book" data-open-form>Naručite se <span class="arr">→</span></button>
+</nav>
+<div class="modal" id="formModal" hidden role="dialog" aria-modal="true" aria-labelledby="formModalTitle">
+  <div class="modal-card">
+    <button type="button" class="modal-x" data-close-form aria-label="Zatvori">×</button>
+    <p class="eyebrow">Upit za termin</p>
+    <h3 id="formModalTitle" style="font-size:34px;margin-bottom:18px">Pošaljite upit</h3>
+    <div id="modalForm"></div>
+  </div>
+</div>
+
+<footer><div class="wrap"><span>© 2026 Dentora Clinic · Zagreb</span><span>Politika privatnosti</span></div></footer>
+
+<script>
+document.documentElement.classList.add('js');
+const reduce=matchMedia('(prefers-reduced-motion: reduce)').matches;
+const $=(s,r=document)=>r.querySelector(s),$$=(s,r=document)=>[...r.querySelectorAll(s)];
+
+// mobile drawer
+const burger=$('#burger'),drawer=$('#drawer');
+function setDrawer(open){
+  drawer.classList.toggle('is-open',open);drawer.setAttribute('aria-hidden',String(!open));
+  document.body.classList.toggle('no-scroll',open);burger.setAttribute('aria-expanded',String(open));
+  if(open){$$('.drawer__nav a,.drawer__label,.drawer__services a,.drawer__foot',drawer).forEach((el,i)=>el.style.transitionDelay=(80+i*35)+'ms');setTimeout(()=>$('.drawer__x',drawer).focus(),50)}
+  else{$$('.drawer__nav a,.drawer__label,.drawer__services a,.drawer__foot',drawer).forEach(el=>el.style.transitionDelay='0ms')}
+}
+burger.addEventListener('click',()=>setDrawer(true));
+$$('[data-drawer-close]',drawer).forEach(b=>b.addEventListener('click',()=>{setDrawer(false);burger.focus()}));
+$$('a,[data-open-form]',drawer).forEach(a=>a.addEventListener('click',()=>setDrawer(false)));
+document.addEventListener('keydown',e=>{if(e.key==='Escape'&&drawer.classList.contains('is-open')){setDrawer(false);burger.focus()}});
+
+// before / after slider component
+function initSlider(cmp){
+  const knob=$('.knob',cmp);let pos=50,drag=false,raf=null;
+  const set=p=>{pos=Math.max(6,Math.min(94,p));cmp.style.setProperty('--pos',pos+'%');knob.setAttribute('aria-valuenow',Math.round(pos))};
+  const fromEvt=e=>{const r=cmp.getBoundingClientRect();set((e.clientX-r.left)/r.width*100)};
+  const stop=()=>{if(raf){cancelAnimationFrame(raf);raf=null}};
+  cmp.addEventListener('pointerdown',e=>{drag=true;stop();cmp.setPointerCapture(e.pointerId);fromEvt(e)});
+  cmp.addEventListener('pointermove',e=>{if(drag)fromEvt(e)});
+  ['pointerup','pointercancel'].forEach(t=>cmp.addEventListener(t,()=>drag=false));
+  knob.addEventListener('keydown',e=>{const s=e.shiftKey?10:2;
+    if(e.key==='ArrowLeft'){set(pos-s);e.preventDefault()}if(e.key==='ArrowRight'){set(pos+s);e.preventDefault()}
+    if(e.key==='Home')set(0);if(e.key==='End')set(100)});
+  cmp.sweep=()=>{ // shows visitors the slider can be dragged
+    if(reduce){set(50);return}stop();const k=[50,18,82,50],dur=2200,t0=performance.now();
+    const ease=t=>t<.5?2*t*t:1-Math.pow(-2*t+2,2)/2;
+    (function step(now){const t=Math.min(1,(now-t0)/dur),sg=Math.min(2,Math.floor(t*3));
+      set(k[sg]+(k[sg+1]-k[sg])*ease(t*3-sg));raf=t<1?requestAnimationFrame(step):null})(t0);
+  };
+  if('IntersectionObserver' in window){
+    const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){cmp.sweep();io.disconnect()}}),{threshold:.5});
+    io.observe(cmp);
+  }
+  const box=cmp.parentElement;
+  $$('.case',box).forEach(b=>b.addEventListener('click',()=>{
+    $$('.case',box).forEach(x=>x.setAttribute('aria-pressed',x===b));
+    $('.before',cmp).src=b.dataset.b;$('.after',cmp).src=b.dataset.a;cmp.sweep();
+  }));
+}
+
+// result tabs
+$$('[role=tablist]').forEach(l=>l.addEventListener('keydown',e=>{if(!['ArrowLeft','ArrowRight'].includes(e.key))return;const ts=$$('[role=tab]',l),i=ts.indexOf(document.activeElement);if(i<0)return;const n=ts[(i+(e.key==='ArrowRight'?1:-1)+ts.length)%ts.length];n.focus();n.click();e.preventDefault()}));
+$$('[role=tab]').forEach(t=>t.addEventListener('click',()=>{
+  const list=t.parentElement,sec=list.closest('section');
+  $$('[role=tab]',list).forEach(x=>x.setAttribute('aria-selected',x===t));
+  $$('[data-panel]',sec).forEach(p=>p.hidden=p.dataset.panel!==t.dataset.tab);
+  const s=$(`[data-panel="${t.dataset.tab}"] [data-slider]`,sec);if(s&&s.sweep)s.sweep();
+}));
+
+// treatment content (in the WordPress theme each of these becomes an editable page)
+const T={
+  aligneri:{name:'Prozirni aligneri',eyebrow:'Ortodoncija bez bravica',h1:'Ravni zubi, bez bravica.',img:'{{intraoralni-skener-digitalni-otisak-zubi-zagreb.avif}}',img2:'{{prozirni-aligneri-ispravljanje-zubi-zagreb.avif}}',
+    lead:'Prozirne folije koje se gotovo ne vide i koje skidate za jelo i pranje zubi. Plan terapije vidite u 3D prije nego što počnemo.',
+    facts:[['Trajanje','ovisno o slučaju'],['Prvi korak','3D sken zuba']],
+    who:['Zbijeni ili blago iskrivljeni zubi','Razmaci između zubi','Zubi koji su se pomaknuli nakon bravica','Želite ispravak koji se ne vidi na poslu i fotografijama'],
+    steps:[['Konzultacije i 3D sken','Intraoralnim skenerom snimimo zube, bez gumenih otisaka.'],['Digitalni plan terapije','Na ekranu vidite kako će se zubi pomicati i kakav je završni rezultat.'],['Nošenje alignera','Folije mijenjate prema planu, uz povremene kontrole u ordinaciji.'],['Održavanje rezultata','Retainer čuva novi položaj zubi.']],
+    faq:[['Vide li se aligneri?','Folije su prozirne i pripijene uz zube, pa ih okolina najčešće ne primijeti.'],['Koliko ih dnevno nosim?','Za dobar rezultat aligneri se nose veći dio dana i noći. Točne upute dobivate uz svoj plan terapije.'],['Boli li terapija?','Prvih dana nakon zamjene folije osjeti se blagi pritisak, što znači da se zubi pomiču.'],['Mogu li normalno jesti?','Da. Alignere skidate za jelo, a prije vraćanja operete zube.']],
+    ba:'ali'},
+  ljuskice:{name:'Keramičke ljuskice',eyebrow:'Estetska stomatologija',h1:'Osmijeh oblikovan po mjeri.',img:'{{stomatoloske-konzultacije-s-pacijenticom-zagreb.avif}}',img2:'{{model-zuba-u-stomatoloskoj-ordinaciji-zagreb.avif}}',
+    lead:'Tanke keramičke ljuskice mijenjaju boju, oblik i razmake zubi. Izgledaju prirodno jer se izrađuju za svaki zub posebno.',
+    facts:[['Trajanje','nekoliko posjeta'],['Prvi korak','dizajn osmijeha']],
+    who:['Mrlje i boja koju izbjeljivanje ne uklanja','Okrhnuti ili istrošeni zubi','Razmaci i nepravilan oblik zubi','Želite potpuno novi, simetričan osmijeh'],
+    steps:[['Konzultacije i dizajn osmijeha','Razgovaramo o željama i digitalno planiramo novi oblik zubi.'],['Probni osmijeh','Prije izrade isprobate izgled budućih ljuskica.'],['Priprema i izrada','Zube pripremimo i uzmemo otisak, a ljuskice se izrađuju po mjeri.'],['Cementiranje i kontrola','Ljuskice trajno postavimo i provjerimo zagriz.']],
+    faq:[['Koliko traju ljuskice?','Uz dobru higijenu i redovite kontrole ljuskice traju dugi niz godina.'],['Bruse li se zubi?','Ovisno o slučaju potrebna je manja priprema zuba. Sve vam objasnimo na konzultacijama.'],['Izgledaju li prirodno?','Boju, oblik i prozirnost ljuskica prilagođavamo vašem licu i susjednim zubima.'],['Trebam li prije izbijeliti zube?','Često da, jer se boja ljuskica usklađuje s vašim prirodnim zubima.']],
+    ba:'lju'},
+  izbjeljivanje:{name:'Izbjeljivanje zubi',eyebrow:'Estetska stomatologija',h1:'Svjetliji osmijeh u jednom posjetu.',img:'{{stomatologinja-bozana-u-ordinaciji-zagreb.avif}}',img2:'{{2.webp}}',
+    lead:'Profesionalno izbjeljivanje u ordinaciji, pod nadzorom doktorice, uz procjenu nijanse prije i poslije tretmana.',
+    facts:[['Trajanje','1 posjet'],['Prvi korak','pregled zubi']],
+    who:['Zubi požutjeli od kave, čaja ili cigareta','Važan događaj, vjenčanje ili fotografiranje','Priprema prije ljuskica','Želite svjetliji, ali prirodan osmijeh'],
+    steps:[['Pregled i čišćenje','Provjerimo zdravlje zubi i desni prije tretmana.'],['Početna nijansa','Zabilježimo boju zubi kako biste vidjeli razliku.'],['Izbjeljivanje u ordinaciji','Tretman provodimo uz zaštitu desni i nadzor doktorice.'],['Savjeti za održavanje','Kažemo vam kako što duže zadržati rezultat.']],
+    faq:[['Je li izbjeljivanje štetno za caklinu?','Profesionalno izbjeljivanje pod nadzorom doktora namijenjeno je zdravim zubima, zato prije tretmana provjerimo njihovo stanje.'],['Koliko traje rezultat?','Ovisi o navikama, ponajviše o kavi, čaju i pušenju. Uz savjete za održavanje rezultat traje dulje.'],['Hoće li zubi biti osjetljivi?','Moguća je prolazna osjetljivost nakon tretmana, koja se brzo povuče.'],['Izbjeljuju li se plombe i krunice?','Ne. Postojeći ispuni i krunice zadržavaju svoju boju, o čemu razgovaramo na pregledu.']],
+    ba:'izb'}
+};
+
+function formHTML(id,sel){return `<form class="form" data-form data-src="${id}" novalidate>
+  <div class="row2"><label for="${id}-ime">Ime i prezime<input id="${id}-ime" name="ime_prezime" required autocomplete="name" maxlength="100"></label>
+  <label for="${id}-tel">Telefon<input id="${id}-tel" name="telefon" type="tel" required autocomplete="tel" maxlength="30"></label></div>
+  <label for="${id}-mail">E-mail<input id="${id}-mail" name="email" type="email" required autocomplete="email" inputmode="email" maxlength="120"></label>
+  <label for="${id}-t">Tretman<select id="${id}-t" name="tretman">${Object.keys(T).map(k=>`<option value="${k}"${k===sel?' selected':''}>${T[k].name}</option>`).join('')}${Object.keys(S).map(k=>`<option value="${k}"${k===sel?' selected':''}>${S[k].name}</option>`).join('')}<option value="ostalo"${sel==='ostalo'?' selected':''}>Ostalo / nisam siguran</option></select></label>
+  <label for="${id}-msg">Poruka (nije obavezno)<textarea id="${id}-msg" name="poruka" rows="3" maxlength="2000"></textarea></label>
+  <div class="hp" aria-hidden="true"><label>Web stranica<input name="website" tabindex="-1" autocomplete="off"></label></div>
+  <p class="form-msg" role="alert" hidden></p>
+  <button class="btn btn-gold" type="submit" style="justify-self:start">Pošaljite upit <span class="arr">→</span></button></form>`}
+// Sends the form to the "Dentora upiti" WordPress plugin. Without window.DENTORA_API (e.g. the preview) it stays a demo.
+const FIELD_LABEL={ime_prezime:'Upišite ime i prezime.',telefon:'Upišite broj telefona.',email:'Upišite ispravnu e-mail adresu.'};
+function bindForms(root){$$('[data-form]',root).forEach(f=>{if(f.dataset.bound)return;f.dataset.bound=1;const opened=Date.now();
+  f.addEventListener('input',e=>{const l=e.target.closest('label');if(l)l.classList.remove('bad')});
+  f.addEventListener('submit',async e=>{e.preventDefault();
+    const msg=$('.form-msg',f),btn=$('button[type=submit]',f);
+    const show=(text,ok)=>{msg.hidden=false;msg.className='form-msg '+(ok?'is-ok':'is-err');msg.textContent=text};
+    // client-side check
+    let bad=null;$$('label',f).forEach(l=>l.classList.remove('bad'));
+    ['ime_prezime','telefon','email'].forEach(n=>{const i=f.elements[n];if(!i.value.trim()||!i.checkValidity()){i.closest('label').classList.add('bad');bad=bad||i}});
+    if(bad){show('Provjerite označena polja: '+FIELD_LABEL[bad.name]);bad.focus();return}
+    if(!window.DENTORA_API){f.outerHTML='<p class="ok"><b>Hvala!</b> Ovo je demo, upit nije poslan. Na pravoj stranici upit stiže na info@dentora-clinic.hr, a vi odmah dobivate e-mail potvrdu.</p>';return}
+    const data={ime_prezime:f.elements.ime_prezime.value.trim(),telefon:f.elements.telefon.value.trim(),email:f.elements.email.value.trim(),tretman:f.elements.tretman.value,poruka:f.elements.poruka.value.trim(),website:f.elements.website.value,ts:opened,izvor:f.dataset.src+' · '+(location.hash||'#pocetna')};
+    btn.disabled=true;const label=btn.innerHTML;btn.innerHTML='Šaljem…';msg.hidden=true;
+    try{
+      const r=await fetch(window.DENTORA_API,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(data)});
+      const j=await r.json().catch(()=>({}));
+      if(r.ok&&j.ok){const m=(j.message||'Hvala! Zaprimili smo vaš upit.').replace(/[<>&]/g,''),i=m.indexOf('!')+1;f.outerHTML=`<p class="ok" role="status"><b>${m.slice(0,i)}</b>${m.slice(i)}</p>`;return}
+      if(j.errors){Object.keys(j.errors).forEach(n=>{const i=f.elements[n];if(i)i.closest('label').classList.add('bad')})}
+      show((j.errors&&Object.values(j.errors)[0])||j.message||'Slanje nije uspjelo. Pokušajte ponovno ili nas nazovite na 091 948 7770.');
+    }catch(err){show('Slanje trenutno nije moguće. Nazovite nas na 091 948 7770 ili pokušajte ponovno.')}
+    btn.disabled=false;btn.innerHTML=label;
+  })})}
+
+const baHome=$('#rezultati .ba-grid > div:first-child');
+function lpHTML(k){const t=T[k];
+  const pEl=$(`[data-panel="${t.ba}"]`,baHome);const panel=pEl?pEl.innerHTML:'';
+  return `<section class="lp-hero"><div class="wrap">
+    <p class="crumb"><a href="#pocetna">Početna</a> / ${t.name}</p>
+    <div class="lp-grid"><div class="lp-copy"><p class="eyebrow">${t.eyebrow}</p><h1>${t.h1}</h1><p class="lead">${t.lead}</p>
+      <dl class="lp-facts">${t.facts.map(f=>`<div><dt>${f[0]}</dt><dd>${f[1]}</dd></div>`).join('')}</dl>
+      <div style="display:flex;gap:14px;flex-wrap:wrap"><button type="button" class="btn btn-gold" data-open-form data-treatment="${k}">Naručite konzultacije <span class="arr">→</span></button><a class="btn btn-line" href="tel:+385919487770">091 948 7770</a></div></div>
+      <img class="lp-img" src="${t.img}" alt="${t.name} u Dentora Clinicu"></div></div></section>
+  <section><div class="wrap lp-two">
+    <div><p class="eyebrow">Za koga je</p><h2>${t.name} su prava odluka ako…</h2><ul class="checks">${t.who.map(w=>`<li>${w}</li>`).join('')}</ul></div>
+    <div><p class="eyebrow">Kako izgleda tretman</p><ol class="steps">${t.steps.map(s=>`<li><div><b>${s[0]}</b><span>${s[1]}</span></div></li>`).join('')}</ol></div>
+  </div></section>
+  ${panel?`<section class="ba"><div class="wrap"><div class="head"><div><p class="eyebrow">Rezultati</p><h2>Prije i poslije</h2></div></div><div class="lp-ba">${panel}</div></div></section>`:''}
+  <section><div class="wrap lp-two">
+    <div class="faq"><p class="eyebrow">Česta pitanja</p><h2 style="margin-bottom:18px">Što pacijenti pitaju</h2>${t.faq.map(q=>`<details><summary>${q[0]}</summary><p>${q[1]}</p></details>`).join('')}</div>
+    <div class="book" id="${k}-upit"><p class="eyebrow">Upit za termin</p><h3 style="font-size:34px;margin-bottom:18px">Javite nam se</h3>${formHTML(k,k)}</div>
+  </div></section>
+  ${lpReviews(k)}${ctaBand()}${othersRow(k)}`}
+const RV_FOR={aligneri:[1,2,3],ljuskice:[1,3,4],izbjeljivanje:[1,0,4]};
+function lpReviews(k){const cards=$$('#home .rv-row .rv');const pick=(RV_FOR[k]||[0,1,2]).map(i=>cards[i]).filter(Boolean);
+  return `<section class="lp-rv"><div class="wrap"><div class="head"><div><p class="eyebrow">Google recenzije · 5.0 (55)</p><h2>Iskustva naših pacijenata</h2></div>
+  <a class="link" href="${$('#home .reviews a.link').href}" target="_blank" rel="noopener">Sve recenzije na Googleu <span class="arr">↗</span></a></div>
+  <div class="lp-rv-grid">${pick.map(c=>c.outerHTML.replace(' open','').replace(/ data-on="1"/,'')).join('')}</div></div></section>`}
+function ctaBand(){return `<section class="svcta"><div class="wrap svcta-in sv-rev"><div><p class="eyebrow">Naručite se</p><h2>Prvi korak je <em>pregled.</em></h2><p>Javite nam se i dogovorite termin koji vam odgovara. Pon – pet, 08 – 20 h.</p></div><div class="svcta-b"><button type="button" class="btn btn-gold" data-open-form>Pošaljite upit <span class="arr">→</span></button><a class="btn btn-ghost" href="tel:+385919487770">091 948 7770</a></div></div></section>`}
+function othersRow(k){const others=[...Object.keys(T).filter(x=>x!==k).map(x=>[x,T[x].name,T[x].eyebrow,T[x].img2]),...Object.keys(S).filter(x=>x!==k).map(x=>[x,S[x].short,S[x].desc,S[x].img])];
+  return `<section class="svo"><div class="wrap"><div class="head"><div><p class="eyebrow">Pogledajte i</p><h2>Ostale usluge</h2></div><div class="svo-nav"><button type="button" class="svo-btn" data-svo="-1" aria-label="Prethodno">←</button><button type="button" class="svo-btn" data-svo="1" aria-label="Sljedeće">→</button></div></div>
+    <div class="svo-row">${others.map(o=>`<a class="svo-card" href="#${o[0]}"><img src="${o[3]}" alt="" loading="lazy"><span class="svo-txt"><b>${o[1]}</b><small>${o[2]}</small></span><span class="svo-arr">${ICON_ARROW}</span></a>`).join('')}</div></div></section>`}
+// izbjeljivanje needs "je" not "su"
+
+// "Ostale usluge" — content taken from the service pages on dentora-clinic.hr
+const S={
+  restaurativna:{name:'Restaurativna stomatologija i endodoncija',short:'Restaurativna i endodoncija',h1:'Restaurativna stomatologija <em>i endodoncija</em>',img:'{{ortopan-rendgenska-snimka-zubi-objasnjenje-pacijentu-zagreb.avif}}',img2:'{{4.webp}}',
+    desc:'Ispuni, liječenje kanala i očuvanje zuba',
+    intro:['Restaurativna stomatologija i endodoncija imaju zajednički cilj, a to je očuvanje strukture zuba i poboljšanje oralnog zdravlja pacijenta.'],
+    sections:[
+      {id:'tretmani',eyebrow:'Što radimo',title:'Dvije grane, jedan cilj',type:'cards',items:[
+        ['Restaurativna stomatologija','Uključuje liječenje karijesa, traumatskih ozljeda i drugih oštećenja zuba, prilikom kojih koristimo najkvalitetnije materijale kako bismo maksimalno očuvali funkciju, a potom i estetiku samog zuba.'],
+        ['Endodoncija','Bavi se liječenjem unutrašnjih struktura zuba, tj. zubne pulpe. Ovaj postupak od vitalnog je značaja za očuvanje zuba koji je pogođen infekcijom ili upalom, a uključuje uklanjanje zubne pulpe, čišćenje i oblikovanje korijenskih kanala te punjenje korijenskih kanala.']]},
+      {id:'postupak',eyebrow:'Kako izgleda liječenje',title:'Od dijagnostike do kontrole',type:'steps',items:[
+        ['Dijagnostika','Prvi korak je dijagnostika, koja uključuje klinički pregled kao i pregled rendgenske snimke, kako bi se utvrdilo stanje zuba i prisutnost karijesa ili drugih oštećenja.'],
+        ['Plan tretmana','Dijagnostika je važna za planiranje odgovarajućeg tretmana.'],
+        ['Restaurativni ili endodontski tretman','Liječimo oštećenja zuba najkvalitetnijim materijalima, uz maksimalno očuvanje funkcije i estetike zuba.'],
+        ['Redovni pregledi','Nakon tretmana pacijenti se upućuju na redovne preglede kako bi se pratilo stanje svih zuba.']]},
+      {type:'callout',title:'Izbjeljivanje zubi',text:'Izbjeljivanje zubi popularna je stomatološka procedura za postizanje svjetlijeg i blistavijeg osmijeha. Prije nego se odlučite za izbjeljivanje, važno je konzultirati se sa stomatologom kako biste odabrali najbolju metodu za vaše zube.',link:['#izbjeljivanje','Više o izbjeljivanju']}],
+    note:'Održavanje oralne higijene i redovne posjete stomatologu ključni su za dugotrajnost restaurativnih radova.'},
+
+  'oralna-kirurgija':{name:'Oralna kirurgija i implantologija',short:'Oralna kirurgija i implantologija',h1:'Oralna kirurgija <em>i implantologija</em>',img:'{{moderna-stomatoloska-ordinacija-interijer-zagreb.avif}}',img2:'{{intraoralni-skener-digitalni-otisak-zubi-zagreb.avif}}',
+    desc:'Implantati, umnjaci, apikotomija',
+    intro:['Oralna kirurgija i implantologija specijalizirane su grane dentalne medicine koje se fokusiraju na dijagnostiku i liječenje složenih problema unutar usne šupljine.','Ove grane zahtijevaju visoku razinu stručnosti, a koriste napredne kirurške tehnike za obnovu funkcionalnosti i estetskog izgleda zuba.'],
+    sections:[
+      {id:'kirurgija',eyebrow:'Oralna kirurgija',title:'Najčešći kirurški zahvati',lead:'Oralna kirurgija obuhvaća sve kirurške zahvate koji uključuju uklanjanje tvrdih zubnih tkiva ili zuba iz usne šupljine.',type:'cards',items:[
+        ['Ekstrakcija zuba','Kirurško uklanjanje zuba ili zaostalih korijenova zuba koji su uzrokovali bol ili su izgubili svoju funkciju.'],
+        ['Alveotomija','Kirurško odstranjivanje umnjaka, koji u slučajevima nedostatka prostora mogu izazvati ozbiljne probleme. Ovaj zahvat omogućava sigurno uklanjanje problematičnih umnjaka i prevenciju komplikacija.'],
+        ['Apikotomija','Kirurški zahvat za uklanjanje upalnih procesa na korijenu već liječenih zuba, čime se produžuje trajnost zuba i sprječava ponovna infekcija.']]},
+      {id:'implantologija',eyebrow:'Implantologija',title:'Put do novog zuba',lead:'Implantologija se bavi ugradnjom dentalnih implantata kao dugoročnim rješenjem za nadoknadu izgubljenih zuba i vraćanje funkcionalnosti žvačnog sustava.',type:'steps',items:[
+        ['Planiranje','Detaljna procjena stanja usne šupljine i čeljusti, uz CBCT dijagnostiku koja nam pomaže precizno odrediti vrstu i duljinu implantata s obzirom na stanje kosti.'],
+        ['Kirurški zahvat','Ugradnja vrhunskih dentalnih implantata u lokalnoj anesteziji. Tijekom postupka osiguravamo maksimalnu preciznost i sigurnost.'],
+        ['Rehabilitacija i oseointegracija','Nakon ugradnje slijedi oporavak, tijekom kojeg se implantat strukturno i funkcionalno spaja s kosti, što je ključno za njegovu dugovječnost.']]},
+      {id:'oseointegracija',eyebrow:'Uspješan oporavak',title:'Ključni faktori za uspješnu oseointegraciju',type:'checks',items:[
+        ['Kvaliteta i količina kosti','Ove karakteristike na mjestu implantacije igraju ključnu ulogu u stabilnosti implantata.'],
+        ['Pravilna higijena usne šupljine','Bitna je za prevenciju infekcija i brži oporavak nakon ugradnje.'],
+        ['Izbjegavanje pušenja','Pušenje može negativno utjecati na oseointegraciju, pa se preporučuje prestanak pušenja tijekom oporavka.'],
+        ['Vitamin D','Pomaže u apsorpciji kalcija, koji je esencijalan za zdravlje kostiju i proces oseointegracije.']]}],
+    note:'Naša misija je pružiti vrhunsku njegu i pomoći vam da povratite osmijeh i funkcionalnost usne šupljine uz minimalne neugodnosti i maksimalnu sigurnost.'},
+
+  protetika:{name:'Protetika',short:'Protetika',h1:'Protetika',img:'{{stomatoloske-konzultacije-s-pacijenticom-zagreb.avif}}',img2:'{{3d-digitalni-sken-zubi-na-ekranu-zagreb.avif}}',
+    desc:'Krunice, mostovi, ljuskice',
+    intro:['Protetika je grana dentalne medicine koja se bavi nadomještanjem izgubljenih zuba i estetskom rekonstrukcijom zuba. Obuhvaća različite metode restauracije zubnog tkiva, obnavljanja funkcije žvakanja i poboljšanja estetike.','Ovisno o vrsti rješenja, protetiku dijelimo na fiksnu (krunice, mostovi i ljuskice) i mobilnu, koja obuhvaća izradu mobilnih proteza.'],
+    sections:[
+      {id:'rjesenja',eyebrow:'Fiksna protetika',title:'Rješenja po mjeri vašeg osmijeha',type:'cards',items:[
+        ['Krunica','Nadomjestak za obnavljanje oštećenih i oslabljenih zuba. Imitira oblik, veličinu i boju prirodnog zuba te se trajno fiksira na izbrušeni zub. Štiti zub od daljnjeg oštećenja i poboljšava izgled osmijeha.'],
+        ['Most','Fiksni nadomjestak za nadoknadu jednog ili više zuba koji nedostaju. Postojeći zubi služe kao nosači mosta, čime se obnavlja funkcija i postiže željena estetika zubnog niza.'],
+        ['Ljuskice','Estetsko i funkcionalno rješenje za prednje zube koje zahtijeva minimalno brušenje cakline. Ispravljaju promjene boje, nepravilnosti ili oštećenja. Koristimo keramičke i kompozitne ljuskice.','#ljuskice']]},
+      {id:'mobilna',eyebrow:'Mobilna protetika',title:'Mobilne proteze',type:'text',paras:['Mobilna protetika obuhvaća izradu mobilnih proteza, koje su također učinkovito rješenje za obnavljanje izgubljenih zuba.','Razvoj materijala i tehnika u protetici omogućuje rješenja koja su funkcionalna, estetski privlačna i dugotrajna, kako bi pacijenti postigli željeni osmijeh i samopouzdanje.']}],
+    note:'Redoviti stomatološki pregledi i pravilna oralna higijena mogu značajno produžiti vijek trajanja fiksnoprotetskih radova.'},
+
+  parodontologija:{name:'Parodontologija',short:'Parodontologija',h1:'Parodontologija',img:'{{intraoralni-skener-digitalni-otisak-zubi-zagreb.avif}}',img2:'{{4.webp}}',
+    desc:'Gingivitis, parodontitis, uklanjanje kamenca',
+    intro:['Parodontologija se bavi očuvanjem zdravlja potpornih struktura zuba: zubnog mesa, parodontnog ligamenta, cementa i kosti.','Fokusira se na prevenciju, dijagnostiku i liječenje upala i infekcija u okolnim tkivima zuba, s ciljem očuvanja funkcije i zdravlja zuba.'],
+    sections:[
+      {id:'gingivitis',eyebrow:'Upala zubnog mesa',title:'Gingivitis',type:'text',paras:['Gingivitis je upalna bolest zubnog mesa koja se najčešće javlja zbog nakupljanja bakterija, zubnog plaka i kamenca. Simptomi uključuju crvenilo, otečenost desni, bolnost i krvarenje prilikom četkanja zuba.','Ako se ne liječi, gingivitis može napredovati u parodontitis, ozbiljniju bolest potpornog aparata zuba koja može dovesti do gubitka zuba.'],
+        good:'Dobra vijest: gingivitis je reverzibilna i izlječiva bolest. Pravilna oralna higijena i liječenje omogućuju potpuno izlječenje.'},
+      {id:'parodontitis',eyebrow:'Ozbiljniji oblik',title:'Parodontitis',lead:'Parodontitis se često razvija postepeno i nerijetko se dijagnosticira u kasnijim fazama. Pravovremena dijagnostika je ključna, a pomaže nam i RTG dijagnostika. Simptomi uključuju:',type:'checks',items:[
+        ['Krvarenje desni','prilikom četkanja. Pušači često nemaju krvarenje zbog sužavanja krvnih žila.'],
+        ['Neugodan zadah','koji ne prolazi nakon pranja zuba.'],
+        ['Povlačenje desni','u naprednijim fazama, kada se zubno meso povuče zajedno s kosti, što može izazvati preosjetljivost zuba.'],
+        ['Parodontalni džepovi','koji nastaju između zuba i zubnog mesa.']]}],
+    note:'Za prevenciju i liječenje parodontitisa, uz dobru oralnu higijenu, važno je redovito čišćenje zubnog kamenca i redovite kontrole kako bi se problemi otkrili na vrijeme.'},
+
+  djecja:{name:'Dječja i preventivna stomatologija',short:'Dječja i preventivna',h1:'Dječja i preventivna <em>stomatologija</em>',img:'{{djecja-stomatologija-sretan-djecak-u-stomatoloskom-stolcu-zagreb.avif}}',img2:'{{djecji-stomatoloski-pregled-djevojcica-zagreb.avif}}',
+    desc:'Fluoridacija, pečaćenje fisura, mliječni zubi',
+    intro:['Dječja stomatologija fokusira se na očuvanje oralnog zdravlja djece, s posebnim naglaskom na rast i razvoj zuba, pravilnu njegu mliječnih zuba i prevenciju karijesa.'],
+    sections:[
+      {id:'prevencija',eyebrow:'Prevencija',title:'Zdravi zubi od prvog zuba',type:'cards',items:[
+        ['Profesionalno čišćenje','Uklanja naslage i pomaže u očuvanju zdravlja zuba.'],
+        ['Fluoridacija','Jača caklinu i štiti zube od karijesa.'],
+        ['Pečaćenje fisura','Zatvara udubine na žvačnim plohama u kojima se lako zadržava hrana.'],
+        ['Sanacija mliječnih zubi','Liječenje karijesa mliječnih zuba prije nego problem naraste.']]},
+      {id:'roditelji',eyebrow:'Za roditelje',title:'Pozitivan odnos prema stomatologu',type:'text',paras:['Edukacija roditelja o važnosti oralne higijene od najranije dobi od esencijalne je važnosti kako bi se usadile zdrave navike koje traju cijeli život.','Posjete stomatologu od prve godine života i redoviti pregledi imaju ključnu ulogu. Djeca koja od malena idu na preventivne preglede i postupno se privikavaju na ordinaciju obično razvijaju manji strah od stomatologa od djece koja su prvi put došla zbog hitne intervencije.']}],
+    note:'Preventivne metode, poput profesionalnog čišćenja zuba, fluoridacije i pečaćenja fisura, pomažu u očuvanju zdravlja zuba i smanjuju potrebu za invazivnim tretmanima u budućnosti.'},
+
+  ortodoncija:{name:'Ortodoncija',short:'Ortodoncija',h1:'Ortodoncija',img:'{{prozirni-aligneri-ispravljanje-zubi-zagreb.avif}}',img2:'{{intraoralni-skener-digitalni-otisak-zubi-zagreb.avif}}',
+    desc:'Clear aligneri, fiksne naprave, retencija',
+    intro:['Ortodoncija se bavi dijagnosticiranjem, prevencijom i liječenjem nepravilnog položaja zuba, nepravilnog rasta zuba, loših zagriza i nesklada međučeljusnih odnosa.','Cilj je pravilan položaj zuba i čeljusti, što značajno poboljšava funkcionalnost, izgled i zdravlje usne šupljine.'],
+    sections:[
+      {id:'zasto',eyebrow:'Zašto ravni zubi',title:'Više od estetike',type:'checks',items:[
+        ['Lakša oralna higijena','Pravilno poravnate zube lakše je održavati čistima.'],
+        ['Manji rizik od karijesa','i bolesti desni.'],
+        ['Bolja funkcija žvakanja','i ugodniji zagriz.'],
+        ['Terapija po mjeri','Koristimo fiksne i mobilne aparate. Trajanje ovisi o složenosti slučaja, od nekoliko mjeseci do nekoliko godina.']]},
+      {id:'aligneri',eyebrow:'Clear aligneri',title:'Gotovo nevidljivi aparatići',type:'text',paras:['Clear aligneri su mobilni aparatići od prozirne folije, individualno izrađeni prema skenu zuba. Gotovo su nevidljivi, a terapija često traje kraće nego s fiksnim aparatima.','Skidaju se prilikom jela i čišćenja zuba, nude veću udobnost i manje iritacije desni. Liječenje uključuje niz udlaga koje se mijenjaju svakih tjedan dana, pomičući zube u željeni položaj.'],
+        link:['#aligneri','Više o prozirnim alignerima']},
+      {id:'retencija',eyebrow:'Nakon terapije',title:'Retencija',type:'text',paras:['Retencija je održavanje zuba u novom položaju nakon završetka terapije. Zubi se imaju tendenciju vraćati u prvobitni položaj, pa retenciju treba slijediti doživotno.','Nepridržavanje uputa za retenciju može dovesti do pomicanja zuba natrag, što može zahtijevati novu terapiju i dodatne troškove.']}],
+    note:'Ravni zubi olakšavaju održavanje oralne higijene, smanjuju rizik od karijesa i bolesti desni te poboljšavaju funkciju žvakanja.'}
+};
+
+const ICON_CHECK='<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.2 4.2L19 7"/></svg>';
+const ICON_ARROW='<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>';
+function svSection(s){
+  const head=`<div class="svs-head"><p class="eyebrow">${s.eyebrow}</p><h2>${s.title}</h2>${s.lead?`<p class="lead">${s.lead}</p>`:''}</div>`;
+  let body='';
+  if(s.type==='cards')body=`<div class="svc-grid n${s.items.length}">${s.items.map((c,i)=>`<article class="svc sv-rev" style="--d:${i*70}ms"><span class="svc-dot"></span><h3>${c[0]}</h3><p>${c[1]}</p>${c[2]?`<a class="link" href="${c[2]}">Saznajte više ${ICON_ARROW}</a>`:''}</article>`).join('')}</div>`;
+  if(s.type==='steps')body=`<ol class="tl">${s.items.map((c,i)=>`<li class="sv-rev" style="--d:${i*80}ms"><span class="tl-n">${i+1}</span><div><h3>${c[0]}</h3><p>${c[1]}</p></div></li>`).join('')}</ol>`;
+  if(s.type==='checks')body=`<ul class="ck">${s.items.map((c,i)=>`<li class="sv-rev" style="--d:${i*60}ms"><span class="ck-i">${ICON_CHECK}</span><p><b>${c[0]}</b> ${c[1]}</p></li>`).join('')}</ul>`;
+  if(s.type==='text')body=`<div class="svt sv-rev">${s.paras.map(p=>`<p>${p}</p>`).join('')}${s.good?`<p class="good"><span class="ck-i">${ICON_CHECK}</span>${s.good}</p>`:''}${s.link?`<a class="link" href="${s.link[0]}">${s.link[1]} ${ICON_ARROW}</a>`:''}</div>`;
+  return `<section class="svs" id="sv-${s.id}"><div class="wrap svs-grid">${head}<div class="svs-body">${body}</div></div></section>`;
+}
+function svHTML(k){const s=S[k];
+  const anchors=s.sections.filter(x=>x.id);
+  const main=s.sections.filter(x=>x.type!=='callout').map(svSection).join('');
+  const call=s.sections.find(x=>x.type==='callout');
+  const others=[...Object.keys(S).filter(x=>x!==k).map(x=>[x,S[x].short,S[x].desc,S[x].img]),...Object.keys(T).map(x=>[x,T[x].name,T[x].eyebrow,T[x].img2])];
+  return `<section class="svh"><div class="wrap">
+    <p class="crumb"><a href="#pocetna">Početna</a> / <a href="#usluge">Usluge</a> / ${s.name}</p>
+    <div class="svh-grid">
+      <div class="svh-copy">
+        <p class="eyebrow">Usluge · Dentora Clinic</p>
+        <h1 class="svh-title">${s.h1}</h1>
+        ${s.intro.map((p,i)=>`<p class="${i?'svh-p':'lead'}">${p}</p>`).join('')}
+        <div class="svh-cta"><button type="button" class="btn btn-gold" data-open-form>Naručite pregled <span class="arr">→</span></button><a class="btn btn-line" href="tel:+385919487770">091 948 7770</a></div>
+        ${anchors.length?`<nav class="toc" aria-label="Na ovoj stranici"><span>Na ovoj stranici</span>${anchors.map(a=>`<a href="#${k}" data-scroll="sv-${a.id}">${a.eyebrow}</a>`).join('')}</nav>`:''}
+      </div>
+      <div class="svh-media">
+        <img class="svh-img" src="${s.img}" alt="${s.name} u Dentora Clinicu">
+        <img class="svh-img2" src="${s.img2}" alt="" aria-hidden="true">
+        <div class="svh-badge"><b>Božana Jelić Rubil</b><span>dr. med. dent.</span></div>
+      </div>
+    </div></div></section>
+  ${main}
+  ${call?`<section class="svs svs-call"><div class="wrap"><div class="callout sv-rev"><div><p class="eyebrow">Povezani tretman</p><h2>${call.title}</h2></div><div><p>${call.text}</p><a class="btn btn-gold" href="${call.link[0]}">${call.link[1]} <span class="arr">→</span></a></div></div></div></section>`:''}
+  <section class="svq"><div class="wrap"><blockquote class="sv-rev"><span class="q-mark">“</span><p>${s.note}</p><cite>Dentora Clinic</cite></blockquote></div></section>
+  ${ctaBand()}${othersRow(k)}`;
+}
+function initViewFx(root){
+  $$('[data-svo]',root).forEach(b=>b.addEventListener('click',()=>{const r=$('.svo-row',root);r.scrollBy({left:+b.dataset.svo*r.clientWidth*.8,behavior:reduce?'auto':'smooth'})}));
+  const els=$$('.sv-rev',root);
+  if(reduce||!('IntersectionObserver' in window))return;
+  els.filter(e=>e.getBoundingClientRect().top>innerHeight*.9).forEach(e=>e.classList.add('pre2'));
+  const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.remove('pre2');io.unobserve(e.target)}}),{rootMargin:'0px 0px -6% 0px'});
+  els.forEach(e=>io.observe(e));
+}
+
+const home=$('#home'),views=$('#views');
+function route(){
+  const h=location.hash.slice(1);
+  $$('[data-nav]').forEach(a=>a.classList.toggle('on',a.dataset.nav===h));
+  if(T[h]||S[h]){
+    views.innerHTML=S[h]?svHTML(h):lpHTML(h).replace(`${T[h].name} su prava`,h==='izbjeljivanje'?'Izbjeljivanje je prava':`${T[h].name} su prava`);
+    views.hidden=false;home.hidden=true;
+    $$('[data-slider]',views).forEach(initSlider);bindForms(views);initViewFx(views);initRv(views);window.scrollTo({top:0,behavior:'instant'});
+  }else{
+    const wasLp=!views.hidden;views.hidden=true;views.innerHTML='';home.hidden=false;
+    if(h==='pocetna')window.scrollTo({top:0,behavior:wasLp?'instant':'smooth'});
+    else if(wasLp&&!h)window.scrollTo({top:0,behavior:'instant'});
+    else if(h&&wasLp){const el=document.getElementById(h);if(el){window.scrollTo({top:0,behavior:'instant'});requestAnimationFrame(()=>el.scrollIntoView({behavior:reduce?'auto':'smooth'}))}}
+  }
+}
+addEventListener('hashchange',route);
+
+// quiz
+const Q=[
+  {q:'Što biste najviše voljeli promijeniti?',o:[['Boju zubi, žuti su ili tamni','izbjeljivanje',2],['Oblik, veličinu ili oštećenja zubi','ljuskice',2],['Položaj zubi, krivi su ili imaju razmake','aligneri',2]]},
+  {q:'Kada želite vidjeti rezultat?',o:[['Što prije, imam važan događaj','izbjeljivanje',1],['U nekoliko tjedana','ljuskice',1],['Imam vremena, želim trajno rješenje','aligneri',1]]},
+  {q:'Kakav rezultat želite?',o:[['Isti osmijeh, samo svjetliji','izbjeljivanje',1],['Potpuno novi, savršeno simetričan osmijeh','ljuskice',1],['Ravne zube i bolji zagriz','aligneri',1]]}];
+const qc=$('#quiz');let step=0,score={};
+function qRender(){
+  const prog=`<div class="qprog">${Q.map((_,i)=>`<i class="${i<=step?'on':''}"></i>`).join('')}</div>`;
+  if(step<Q.length){const it=Q[step];
+    qc.innerHTML=`${prog}<p class="qnum">Pitanje ${step+1} od ${Q.length}</p><h3>${it.q}</h3><div class="qopts">${it.o.map((o,i)=>`<button class="qopt" data-i="${i}">${o[0]}</button>`).join('')}</div>`;
+    $$('.qopt',qc).forEach(b=>b.addEventListener('click',()=>{const o=it.o[b.dataset.i];score[o[1]]=(score[o[1]]||0)+o[2];step++;qRender()}));
+  }else{
+    const best=Object.keys(score).sort((a,b)=>score[b]-score[a])[0],t=T[best];
+    qc.innerHTML=`<div class="qprog">${Q.map(()=>'<i class="on"></i>').join('')}</div><p class="qnum">Vaš rezultat</p>
+      <p class="qres-name">${t.name}</p><p style="color:var(--muted)">${t.lead}</p>
+      <a class="link" href="#${best}">Pogledajte kako izgleda tretman <span class="arr">→</span></a>
+      <p style="font-size:15px">Ostavite broj i javit ćemo vam se s terminom za konzultacije.</p>
+      ${formHTML('kviz',best)}<button class="textbtn" id="qreset">Ponovi kviz</button>`;
+    bindForms(qc);$('#qreset').addEventListener('click',()=>{step=0;score={};qRender()});
+  }
+}
+qRender();
+
+// review cards: show "Prikaži više" only where text is clamped
+function initRv(root){$$('.rv',root).forEach(c=>{const tx=$('.rv-text',c),b=$('.rv-more',c);if(!b||b.dataset.on)return;
+  if(tx.scrollHeight>tx.clientHeight+2){b.hidden=false;b.dataset.on=1;b.addEventListener('click',()=>{const o=c.classList.toggle('open');b.textContent=o?'Prikaži manje':'Prikaži više';b.setAttribute('aria-expanded',o)})}else b.hidden=true})}
+initRv(document);
+// "Ostale usluge" hover preview following the cursor
+(()=>{const pv=$('#olPrev');if(!pv)return;let x=0,y=0,cx=0,cy=0,raf=null;
+  const loop=()=>{cx+=(x-cx)*.18;cy+=(y-cy)*.18;pv.style.left=cx+'px';pv.style.top=cy+'px';raf=Math.abs(x-cx)+Math.abs(y-cy)>.5?requestAnimationFrame(loop):null};
+  $$('.olist a').forEach(a=>{a.addEventListener('mouseenter',e=>{pv.src=a.dataset.prev;cx=x=e.clientX+150;cy=y=e.clientY;pv.classList.add('on');loop()});
+    a.addEventListener('mousemove',e=>{x=e.clientX+150;y=e.clientY;if(!raf)raf=requestAnimationFrame(loop)});
+    a.addEventListener('mouseleave',()=>pv.classList.remove('on'))});})();
+// home contact form
+const modal=$('#formModal');let lastFocus=null;
+const bg=()=>['header','#home','#views','footer','.mbar'].map(s=>$(s)).filter(Boolean);
+function openForm(sel){lastFocus=document.activeElement;$('#modalForm').innerHTML=formHTML('modal',sel||'ostalo');bindForms(modal);modal.hidden=false;document.body.style.overflow='hidden';bg().forEach(e=>e.inert=true);$('input',modal).focus()}
+modal.addEventListener('keydown',e=>{if(e.key!=='Tab')return;const f=$$('button,input,select,textarea,a[href]',modal).filter(x=>!x.disabled&&x.offsetParent);if(!f.length)return;const a=f[0],z=f[f.length-1];
+  if(e.shiftKey&&document.activeElement===a){e.preventDefault();z.focus()}else if(!e.shiftKey&&document.activeElement===z){e.preventDefault();a.focus()}});
+function closeForm(){modal.hidden=true;document.body.style.overflow='';bg().forEach(e=>e.inert=false);if(lastFocus)lastFocus.focus()}
+document.addEventListener('click',e=>{{const o=e.target.closest('[data-open-form]');if(o){e.preventDefault();openForm(o.dataset.treatment)}}if(e.target.closest('[data-close-form]')||e.target===modal)closeForm()});
+document.addEventListener('keydown',e=>{if(e.key==='Escape'&&!modal.hidden)closeForm()});
+document.addEventListener('click',e=>{const a=e.target.closest('[data-scroll]');if(a){e.preventDefault();document.getElementById(a.dataset.scroll).scrollIntoView({behavior:reduce?'auto':'smooth'})}});
+bindForms(document);
+$$('#home [data-slider]').forEach(initSlider);
+route();
+
+// reveal on scroll (only elements below the fold start hidden)
+if(!reduce&&'IntersectionObserver' in window){
+  const els=$$('#home .reveal').filter(el=>el.getBoundingClientRect().top>innerHeight);
+  els.forEach(el=>el.classList.add('pre'));
+  const ro=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.remove('pre');ro.unobserve(e.target)}}),{rootMargin:'0px 0px -8% 0px'});
+  els.forEach(el=>ro.observe(el));
+}
+</script>

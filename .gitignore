@@ -1,0 +1,7 @@
+site/dist/
+tests/qa/qa.json
+tests/plugin/last_mails.json
+tests/plugin/e2e_*.png
+__pycache__/
+*.bak
+.DS_Store

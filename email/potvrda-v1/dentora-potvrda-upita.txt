@@ -1,0 +1,31 @@
+Hvala vam, {{ime_prezime}}!
+
+Zaprimili smo vaš upit za termin u Dentora Clinicu. Javit ćemo vam se telefonom tijekom radnog vremena kako bismo zajedno dogovorili termin koji vam odgovara.
+
+VAŠ UPIT
+Ime i prezime: {{ime_prezime}}
+Telefon: {{telefon}}
+E-mail: {{email}}
+Tretman: {{tretman}}
+Poruka: {{poruka}}
+
+ŠTO SLIJEDI?
+1. Javimo vam se – nazvat ćemo vas na broj koji ste ostavili i dogovoriti termin.
+2. Pregled i razgovor – na prvom posjetu pregledamo zube i razgovaramo o vašim željama.
+3. Plan liječenja – zajedno odaberemo rješenje koje odgovara vašem osmijehu.
+
+Trebate li promijeniti ili dopuniti upit, jednostavno odgovorite na ovaj e-mail ili nas nazovite.
+
+Srdačan pozdrav,
+Božana Jelić Rubil, dr. med. dent.
+i tim Dentora Clinica
+
+Dentora Clinic
+Dankovečka ul. 6, 10040 Zagreb
+Telefon: 091 948 7770
+E-mail: info@dentora-clinic.hr
+Radno vrijeme: pon – pet 08 – 20 h, sub – ned zatvoreno
+Kako do nas: https://www.google.com/maps/search/?api=1&query=Dentora+Clinic+Dankove%C4%8Dka+6+Zagreb
+
+Ovu poruku primili ste jer ste ispunili kontaktni obrazac na dentora-clinic.hr.
+Politika privatnosti: https://dentora-clinic.hr/politika-privatnosti-2/
