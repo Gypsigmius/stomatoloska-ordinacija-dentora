@@ -567,7 +567,8 @@ section[id],[id$="-upit"]{scroll-margin-top:calc(90px + env(safe-area-inset-top,
 
 /* composite veneers cases: caption + 4 thumbnails */
 .case-cap{margin:12px 0 0;font-size:14px;color:var(--muted)}
-.cases-4 .case{aspect-ratio:1080/675}
+.cases-4 .case{aspect-ratio:1080/675;min-width:0}
+@media (max-width:420px){.cases-4{gap:8px}.cases-4 .case{aspect-ratio:auto;height:46px}}
 @media (max-width:600px){.case-cap{font-size:15px}}
 </style>
 
@@ -599,7 +600,7 @@ section[id],[id$="-upit"]{scroll-margin-top:calc(90px + env(safe-area-inset-top,
     <nav class="drawer__nav" aria-label="Mobilna navigacija">
       <a href="#pocetna">Početna</a>
       <a href="#aligneri">Prozirni aligneri</a>
-      <a href="#ljuskice">Keramičke/kompozitne ljuskice</a>
+      <a href="#ljuskice">Keramičke/<wbr>kompozitne ljuskice</a>
       <a href="#izbjeljivanje">Izbjeljivanje zubi</a>
       <a href="#onama">O nama</a>
       <a href="#kontakt">Kontakt</a>
@@ -663,7 +664,7 @@ section[id],[id$="-upit"]{scroll-margin-top:calc(90px + env(safe-area-inset-top,
         <img src="{{kompozitne-ljuskice-poslije-1-zagreb.avif}}" alt="Osmijeh nakon kompozitnih ljuskica">
         <div class="tc-body">
           <p class="eyebrow">Estetika</p>
-          <h3>Keramičke/kompozitne ljuskice</h3>
+          <h3>Keramičke/<wbr>kompozitne ljuskice</h3>
           <p>Nova boja, oblik i simetrija osmijeha. Izrađene posebno za svaki zub.</p>
           <span class="link">Saznajte više <span class="arr">→</span></span>
         </div>
@@ -938,7 +939,7 @@ const T={
     steps:[['Konzultacije i 3D sken','Intraoralnim skenerom snimimo zube, bez gumenih otisaka.'],['Digitalni plan terapije','Na ekranu vidite kako će se zubi pomicati i kakav je završni rezultat.'],['Nošenje alignera','Folije mijenjate prema planu, uz povremene kontrole u ordinaciji.'],['Održavanje rezultata','Retainer čuva novi položaj zubi.']],
     faq:[['Vide li se aligneri?','Folije su prozirne i pripijene uz zube, pa ih okolina najčešće ne primijeti.'],['Koliko ih dnevno nosim?','Za dobar rezultat aligneri se nose veći dio dana i noći. Točne upute dobivate uz svoj plan terapije.'],['Boli li terapija?','Prvih dana nakon zamjene folije osjeti se blagi pritisak, što znači da se zubi pomiču.'],['Mogu li normalno jesti?','Da. Alignere skidate za jelo, a prije vraćanja operete zube.']],
     ba:'ali'},
-  ljuskice:{name:'Keramičke/kompozitne ljuskice',eyebrow:'Estetska stomatologija',h1:'Osmijeh oblikovan po mjeri.',img:'{{stomatoloske-konzultacije-s-pacijenticom-zagreb.avif}}',img2:'{{model-zuba-u-stomatoloskoj-ordinaciji-zagreb.avif}}',
+  ljuskice:{name:'Keramičke/\u200Bkompozitne ljuskice',eyebrow:'Estetska stomatologija',h1:'Osmijeh oblikovan po mjeri.',img:'{{stomatoloske-konzultacije-s-pacijenticom-zagreb.avif}}',img2:'{{model-zuba-u-stomatoloskoj-ordinaciji-zagreb.avif}}',
     lead:'Keramičke ili kompozitne ljuskice mijenjaju boju, oblik i razmake zubi. Izgledaju prirodno jer se izrađuju za svaki zub posebno.',
     facts:[['Trajanje','nekoliko posjeta'],['Prvi korak','dizajn osmijeha']],
     who:['Mrlje i boja koju izbjeljivanje ne uklanja','Okrhnuti ili istrošeni zubi','Razmaci i nepravilan oblik zubi','Želite potpuno novi, simetričan osmijeh'],
