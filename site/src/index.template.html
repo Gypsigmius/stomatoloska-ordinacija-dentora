@@ -564,6 +564,11 @@ section[id],[id$="-upit"]{scroll-margin-top:calc(90px + env(safe-area-inset-top,
 .form-msg{margin:0;padding:12px 14px;border-radius:3px;font-size:15px;text-transform:none;letter-spacing:0}
 .form-msg.is-err{background:#fbeeec;color:#8c1d16;border:1px solid #f0c9c4}
 .form button[disabled]{opacity:.7;cursor:wait}
+
+/* composite veneers cases: caption + 4 thumbnails */
+.case-cap{margin:12px 0 0;font-size:14px;color:var(--muted)}
+.cases-4 .case{aspect-ratio:1080/675}
+@media (max-width:600px){.case-cap{font-size:15px}}
 </style>
 
 <header>
@@ -594,7 +599,7 @@ section[id],[id$="-upit"]{scroll-margin-top:calc(90px + env(safe-area-inset-top,
     <nav class="drawer__nav" aria-label="Mobilna navigacija">
       <a href="#pocetna">Početna</a>
       <a href="#aligneri">Prozirni aligneri</a>
-      <a href="#ljuskice">Keramičke ljuskice</a>
+      <a href="#ljuskice">Keramičke/kompozitne ljuskice</a>
       <a href="#izbjeljivanje">Izbjeljivanje zubi</a>
       <a href="#onama">O nama</a>
       <a href="#kontakt">Kontakt</a>
@@ -655,10 +660,10 @@ section[id],[id$="-upit"]{scroll-margin-top:calc(90px + env(safe-area-inset-top,
         </div>
       </a>
       <a class="tc tc-main reveal" href="#ljuskice">
-        <img src="{{model-zuba-u-stomatoloskoj-ordinaciji-zagreb.avif}}" alt="Model zuba u ordinaciji">
+        <img src="{{kompozitne-ljuskice-poslije-1-zagreb.avif}}" alt="Osmijeh nakon kompozitnih ljuskica">
         <div class="tc-body">
           <p class="eyebrow">Estetika</p>
-          <h3>Keramičke ljuskice</h3>
+          <h3>Keramičke/kompozitne ljuskice</h3>
           <p>Nova boja, oblik i simetrija osmijeha. Izrađene posebno za svaki zub.</p>
           <span class="link">Saznajte više <span class="arr">→</span></span>
         </div>
@@ -679,24 +684,41 @@ section[id],[id$="-upit"]{scroll-margin-top:calc(90px + env(safe-area-inset-top,
 <section class="ba" id="rezultati">
   <div class="wrap">
     <div class="head">
-      <div><p class="eyebrow">Naši radovi</p><h2>Razlika koju vidite odmah.</h2></div>
+      <div><p class="eyebrow">Naši radovi · Kompozitne ljuskice</p><h2>Razlika koju vidite odmah.</h2></div>
       
     </div>
     <div class="ba-grid">
       <div>
-        <div data-panel="izb">
+        <div data-panel="lju">
           <div class="cmp" data-slider style="--pos:50%">
-            <img class="after" src="{{2.webp}}" alt="Zubi nakon izbjeljivanja">
-            <img class="before" src="{{1.webp}}" alt="Zubi prije izbjeljivanja">
+            <img class="after" src="{{kompozitne-ljuskice-poslije-1-zagreb.avif}}" alt="Zubi nakon kompozitnih ljuskica">
+            <img class="before" src="{{kompozitne-ljuskice-prije-1-zagreb.avif}}" alt="Zubi prije kompozitnih ljuskica">
+            <span class="tag l">Prije</span><span class="tag r">Poslije</span>
+            <div class="bar"></div>
+            <div class="knob" role="slider" tabindex="0" aria-label="Usporedba prije i poslije" aria-valuemin="0" aria-valuemax="100" aria-valuenow="50"><svg viewBox="0 0 26 26"><path d="M9 7l-6 6 6 6M17 7l6 6-6 6"/></svg></div>
+          </div>
+          <p class="case-cap" aria-live="polite">Izbjeljivanje zubi + kompozitne ljuskice na 6 prednjih zuba u gornjoj čeljusti</p>
+          <p class="hint"><span class="arr">↔</span> Povucite klizač za usporedbu</p>
+          <div class="cases cases-4" role="group" aria-label="Odaberite primjer">
+            <button class="case" aria-pressed="true" data-b="{{kompozitne-ljuskice-prije-1-zagreb.avif}}" data-a="{{kompozitne-ljuskice-poslije-1-zagreb.avif}}" data-cap="Izbjeljivanje zubi + kompozitne ljuskice na 6 prednjih zuba u gornjoj čeljusti" aria-label="Primjer 1"><img src="{{kompozitne-ljuskice-poslije-1-zagreb.avif}}" alt=""></button>
+            <button class="case" aria-pressed="false" data-b="{{kompozitne-ljuskice-prije-2-zagreb.avif}}" data-a="{{kompozitne-ljuskice-poslije-2-zagreb.avif}}" data-cap="Izbjeljivanje zubi + kompozitne ljuskice na 6 prednjih zuba u gornjoj čeljusti" aria-label="Primjer 2"><img src="{{kompozitne-ljuskice-poslije-2-zagreb.avif}}" alt=""></button>
+            <button class="case" aria-pressed="false" data-b="{{kompozitne-ljuskice-prije-3-zagreb.avif}}" data-a="{{kompozitne-ljuskice-poslije-3-zagreb.avif}}" data-cap="Kompozitne ljuskice na 6 prednjih zuba u gornjoj čeljusti" aria-label="Primjer 3"><img src="{{kompozitne-ljuskice-poslije-3-zagreb.avif}}" alt=""></button>
+            <button class="case" aria-pressed="false" data-b="{{kompozitne-ljuskice-prije-4-zagreb.avif}}" data-a="{{kompozitne-ljuskice-poslije-4-zagreb.avif}}" data-cap="Izbjeljivanje zubi + kompozitne ljuskice na 6 prednjih zuba u gornjoj čeljusti" aria-label="Primjer 4"><img src="{{kompozitne-ljuskice-poslije-4-zagreb.avif}}" alt=""></button>
+          </div>
+        </div>
+        <div data-panel="izb" hidden>
+          <div class="cmp" data-slider style="--pos:50%">
+            <img class="after" loading="lazy" src="{{2.webp}}" alt="Zubi nakon izbjeljivanja">
+            <img class="before" loading="lazy" src="{{1.webp}}" alt="Zubi prije izbjeljivanja">
             <span class="tag l">Prije</span><span class="tag r">Poslije</span>
             <div class="bar"></div>
             <div class="knob" role="slider" tabindex="0" aria-label="Usporedba prije i poslije" aria-valuemin="0" aria-valuemax="100" aria-valuenow="50"><svg viewBox="0 0 26 26"><path d="M9 7l-6 6 6 6M17 7l6 6-6 6"/></svg></div>
           </div>
           <p class="hint"><span class="arr">↔</span> Povucite klizač za usporedbu</p>
           <div class="cases" role="group" aria-label="Odaberite primjer">
-            <button class="case" aria-pressed="true" data-b="{{1.webp}}" data-a="{{2.webp}}" aria-label="Primjer 1"><img src="{{2.webp}}" alt=""></button>
-            <button class="case" aria-pressed="false" data-b="{{3.webp}}" data-a="{{4.webp}}" aria-label="Primjer 2"><img src="{{4.webp}}" alt=""></button>
-            <button class="case" aria-pressed="false" data-b="{{7.webp}}" data-a="{{8.webp}}" aria-label="Primjer 3"><img src="{{8.webp}}" alt=""></button>
+            <button class="case" aria-pressed="true" data-b="{{1.webp}}" data-a="{{2.webp}}" aria-label="Primjer 1"><img loading="lazy" src="{{2.webp}}" alt=""></button>
+            <button class="case" aria-pressed="false" data-b="{{3.webp}}" data-a="{{4.webp}}" aria-label="Primjer 2"><img loading="lazy" src="{{4.webp}}" alt=""></button>
+            <button class="case" aria-pressed="false" data-b="{{7.webp}}" data-a="{{8.webp}}" aria-label="Primjer 3"><img loading="lazy" src="{{8.webp}}" alt=""></button>
           </div>
         </div>
       </div>
@@ -707,7 +729,7 @@ section[id],[id$="-upit"]{scroll-margin-top:calc(90px + env(safe-area-inset-top,
           <div><b>Tretman</b><span>u ordinaciji, pod nadzorom doktorice</span></div>
           <div><b>Kontrola</b><span>i savjeti kako zadržati rezultat</span></div>
         </div>
-        <div><button type="button" class="btn btn-gold" data-open-form>Želim ovakav osmijeh <span class="arr">→</span></button></div>
+        <div><button type="button" class="btn btn-gold" data-open-form data-treatment="ljuskice">Želim ovakav osmijeh <span class="arr">→</span></button></div>
       </div>
     </div>
   </div>
@@ -893,6 +915,7 @@ function initSlider(cmp){
   const box=cmp.parentElement;
   $$('.case',box).forEach(b=>b.addEventListener('click',()=>{
     $$('.case',box).forEach(x=>x.setAttribute('aria-pressed',x===b));
+    const cap=$('.case-cap',box);if(cap&&b.dataset.cap)cap.textContent=b.dataset.cap;
     $('.before',cmp).src=b.dataset.b;$('.after',cmp).src=b.dataset.a;cmp.sweep();
   }));
 }
@@ -915,12 +938,12 @@ const T={
     steps:[['Konzultacije i 3D sken','Intraoralnim skenerom snimimo zube, bez gumenih otisaka.'],['Digitalni plan terapije','Na ekranu vidite kako će se zubi pomicati i kakav je završni rezultat.'],['Nošenje alignera','Folije mijenjate prema planu, uz povremene kontrole u ordinaciji.'],['Održavanje rezultata','Retainer čuva novi položaj zubi.']],
     faq:[['Vide li se aligneri?','Folije su prozirne i pripijene uz zube, pa ih okolina najčešće ne primijeti.'],['Koliko ih dnevno nosim?','Za dobar rezultat aligneri se nose veći dio dana i noći. Točne upute dobivate uz svoj plan terapije.'],['Boli li terapija?','Prvih dana nakon zamjene folije osjeti se blagi pritisak, što znači da se zubi pomiču.'],['Mogu li normalno jesti?','Da. Alignere skidate za jelo, a prije vraćanja operete zube.']],
     ba:'ali'},
-  ljuskice:{name:'Keramičke ljuskice',eyebrow:'Estetska stomatologija',h1:'Osmijeh oblikovan po mjeri.',img:'{{stomatoloske-konzultacije-s-pacijenticom-zagreb.avif}}',img2:'{{model-zuba-u-stomatoloskoj-ordinaciji-zagreb.avif}}',
-    lead:'Tanke keramičke ljuskice mijenjaju boju, oblik i razmake zubi. Izgledaju prirodno jer se izrađuju za svaki zub posebno.',
+  ljuskice:{name:'Keramičke/kompozitne ljuskice',eyebrow:'Estetska stomatologija',h1:'Osmijeh oblikovan po mjeri.',img:'{{stomatoloske-konzultacije-s-pacijenticom-zagreb.avif}}',img2:'{{model-zuba-u-stomatoloskoj-ordinaciji-zagreb.avif}}',
+    lead:'Keramičke ili kompozitne ljuskice mijenjaju boju, oblik i razmake zubi. Izgledaju prirodno jer se izrađuju za svaki zub posebno.',
     facts:[['Trajanje','nekoliko posjeta'],['Prvi korak','dizajn osmijeha']],
     who:['Mrlje i boja koju izbjeljivanje ne uklanja','Okrhnuti ili istrošeni zubi','Razmaci i nepravilan oblik zubi','Želite potpuno novi, simetričan osmijeh'],
     steps:[['Konzultacije i dizajn osmijeha','Razgovaramo o željama i digitalno planiramo novi oblik zubi.'],['Probni osmijeh','Prije izrade isprobate izgled budućih ljuskica.'],['Priprema i izrada','Zube pripremimo i uzmemo otisak, a ljuskice se izrađuju po mjeri.'],['Cementiranje i kontrola','Ljuskice trajno postavimo i provjerimo zagriz.']],
-    faq:[['Koliko traju ljuskice?','Uz dobru higijenu i redovite kontrole ljuskice traju dugi niz godina.'],['Bruse li se zubi?','Ovisno o slučaju potrebna je manja priprema zuba. Sve vam objasnimo na konzultacijama.'],['Izgledaju li prirodno?','Boju, oblik i prozirnost ljuskica prilagođavamo vašem licu i susjednim zubima.'],['Trebam li prije izbijeliti zube?','Često da, jer se boja ljuskica usklađuje s vašim prirodnim zubima.']],
+    faq:[['Koja je razlika između keramičkih i kompozitnih ljuskica?','Kompozitne ljuskice oblikuju se tekućim kompozitom kroz precizni prozirni silikonski ključ, bez brušenja prirodne strukture zuba. Keramičke ljuskice izrađuju se u laboratoriju i zahtijevaju minimalno brušenje cakline. Koja je bolja za vas, zajedno odlučimo na pregledu.'],['Koliko traju ljuskice?','Uz dobru higijenu i redovite kontrole ljuskice traju dugi niz godina.'],['Bruse li se zubi?','Kod kompozitnih ljuskica ne, prirodna struktura zuba ostaje očuvana. Keramičke ljuskice zahtijevaju minimalnu pripremu zuba. Sve vam objasnimo na konzultacijama.'],['Izgledaju li prirodno?','Boju, oblik i prozirnost ljuskica prilagođavamo vašem licu i susjednim zubima.'],['Trebam li prije izbijeliti zube?','Često da, jer se boja ljuskica usklađuje s vašim prirodnim zubima.']],
     ba:'lju'},
   izbjeljivanje:{name:'Izbjeljivanje zubi',eyebrow:'Estetska stomatologija',h1:'Svjetliji osmijeh u jednom posjetu.',img:'{{stomatologinja-bozana-u-ordinaciji-zagreb.avif}}',img2:'{{2.webp}}',
     lead:'Profesionalno izbjeljivanje u ordinaciji, pod nadzorom doktorice, uz procjenu nijanse prije i poslije tretmana.',

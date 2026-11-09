@@ -2,7 +2,7 @@
 /**
  * Plugin Name:       Dentora upiti
  * Description:       Prima upite s Dentora obrazaca (popup, kviz, stranice tretmana), šalje ih klinici i pacijentu šalje e-mail potvrdu. Slanje ide preko wp_mail(), pa koristi postojeći SMTP plugin.
- * Version:           1.1.0
+ * Version:           1.1.1
  * Requires at least: 5.8
  * Requires PHP:      7.4
  * Author:            Dentora Clinic
@@ -14,7 +14,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
 
-define( 'DENTORA_UPITI_VERSION', '1.1.0' );
+define( 'DENTORA_UPITI_VERSION', '1.1.1' );
 define( 'DENTORA_UPITI_DIR', plugin_dir_path( __FILE__ ) );
 
 final class Dentora_Upiti {
@@ -32,7 +32,7 @@ final class Dentora_Upiti {
 			'dentora_upiti_treatments',
 			array(
 				'aligneri'         => 'Prozirni aligneri',
-				'ljuskice'         => 'Keramičke ljuskice',
+				'ljuskice'         => 'Keramičke/kompozitne ljuskice',
 				'izbjeljivanje'    => 'Izbjeljivanje zubi',
 				'restaurativna'    => 'Restaurativna stomatologija i endodoncija',
 				'oralna-kirurgija' => 'Oralna kirurgija i implantologija',
