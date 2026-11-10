@@ -570,6 +570,9 @@ section[id],[id$="-upit"]{scroll-margin-top:calc(90px + env(safe-area-inset-top,
 .cases-4 .case{aspect-ratio:1080/675;min-width:0}
 @media (max-width:420px){.cases-4{gap:8px}.cases-4 .case{aspect-ratio:auto;height:46px}}
 @media (max-width:600px){.case-cap{font-size:15px}}
+
+.tech-goal{margin-top:24px;padding-top:20px;border-top:1px solid rgba(243,236,226,.16);font-family:var(--display);font-size:22px;line-height:1.35;color:#f3ece2}
+.tc-body p strong{color:var(--ink);font-weight:600}
 </style>
 
 <header>
@@ -625,9 +628,9 @@ section[id],[id$="-upit"]{scroll-margin-top:calc(90px + env(safe-area-inset-top,
 <div class="hero hero--photo">
   <picture class="hero-bg">
     <source media="(max-width:860px)" srcset="{{dr-bozana-jelic-rubil-stomatologinja-dentora-clinic-zagreb-900.avif}}">
-    <img src="{{dr-bozana-jelic-rubil-stomatologinja-dentora-clinic-zagreb-1600.avif}}" alt="Dr. Božana Jelić Rubil, stomatologinja u Dentora Clinicu" fetchpriority="high" width="1600" height="2400">
+    <img src="{{dr-bozana-jelic-rubil-stomatologinja-dentora-clinic-zagreb-1600.avif}}" alt="Dr. Božana Jelić Rubil, stomatologinja u Dentora Clinic" fetchpriority="high" width="1600" height="2400">
   </picture>
-  <div class="hero-tag"><b>Dr. Božana Jelić Rubil</b><span>dr. med. dent. · osnivačica Dentora Clinica</span></div>
+  <div class="hero-tag"><b>Dr. Božana Jelić Rubil</b><span>dr. med. dent. · osnivačica Dentora Clinic</span></div>
   <div class="wrap hero-grid">
     <div class="hero-copy">
       <p class="eyebrow">Estetska stomatologija · Zagreb</p>
@@ -656,25 +659,25 @@ section[id],[id$="-upit"]{scroll-margin-top:calc(90px + env(safe-area-inset-top,
         <div class="tc-body">
           <p class="eyebrow">Ortodoncija</p>
           <h3>Prozirni aligneri</h3>
-          <p>Ravni zubi bez bravica. Folije se gotovo ne vide i skidate ih za jelo.</p>
+          <p><strong>Ravni zubi bez bravica.</strong> Diskretna i moderna terapija koja postupno ispravlja položaj zubi uz nevidljive i udobne alignere.</p>
           <span class="link">Saznajte više <span class="arr">→</span></span>
         </div>
       </a>
-      <a class="tc tc-main reveal" href="#ljuskice">
-        <img src="{{kompozitne-ljuskice-poslije-1-zagreb.avif}}" alt="Osmijeh nakon kompozitnih ljuskica">
-        <div class="tc-body">
-          <p class="eyebrow">Estetika</p>
-          <h3>Keramičke/<wbr>kompozitne ljuskice</h3>
-          <p>Nova boja, oblik i simetrija osmijeha. Izrađene posebno za svaki zub.</p>
-          <span class="link">Saznajte više <span class="arr">→</span></span>
-        </div>
-      </a>
-      <a class="tc reveal" href="#izbjeljivanje">
+      <a class="tc tc-main reveal" href="#izbjeljivanje">
         <img src="{{2.webp}}" alt="Bijeli zubi nakon izbjeljivanja">
         <div class="tc-body">
           <p class="eyebrow">Estetika</p>
           <h3>Izbjeljivanje zubi</h3>
-          <p>Svjetliji osmijeh u jednom posjetu, pod nadzorom doktorice.</p>
+          <p>Profesionalno izbjeljivanje pod nadzorom doktorice dentalne medicine za svježiji, svjetliji i blistaviji osmijeh.</p>
+          <span class="link">Saznajte više <span class="arr">→</span></span>
+        </div>
+      </a>
+      <a class="tc reveal" href="#ljuskice">
+        <img src="{{kompozitne-ljuskice-poslije-1-zagreb.avif}}" alt="Osmijeh nakon kompozitnih ljuskica">
+        <div class="tc-body">
+          <p class="eyebrow">Estetika</p>
+          <h3>Keramičke/<wbr>kompozitne ljuskice</h3>
+          <p><strong>Osmijeh kakav ste oduvijek željeli.</strong> Individualno izrađene keramičke/kompozitne ljuskice poboljšavaju oblik, boju i sklad zubi za prirodan i estetski lijep osmijeh.</p>
           <span class="link">Saznajte više <span class="arr">→</span></span>
         </div>
       </a>
@@ -725,10 +728,10 @@ section[id],[id$="-upit"]{scroll-margin-top:calc(90px + env(safe-area-inset-top,
       </div>
       <div class="ba-copy">
         <div class="facts">
-          <div><b>Pregled</b><span>procjena stanja i željenog rezultata</span></div>
-          <div><b>Plan</b><span>prilagođen vašem osmijehu</span></div>
-          <div><b>Tretman</b><span>u ordinaciji, pod nadzorom doktorice</span></div>
-          <div><b>Kontrola</b><span>i savjeti kako zadržati rezultat</span></div>
+          <div><b>Pregled</b><span>upoznajemo vaše želje i razgovaramo o mogućnostima</span></div>
+          <div><b>Plan</b><span>kreiramo plan prilagođen vašim potrebama i željenom rezultatu</span></div>
+          <div><b>Tretman</b><span>provodimo pažljivo, uz suvremene metode i stručni nadzor doktorice dentalne medicine</span></div>
+          <div><b>Kontrola</b><span>pratimo rezultate i pružamo savjete za dugoročno očuvanje vašeg osmijeha</span></div>
         </div>
         <div><button type="button" class="btn btn-gold" data-open-form data-treatment="ljuskice">Želim ovakav osmijeh <span class="arr">→</span></button></div>
       </div>
@@ -750,13 +753,13 @@ section[id],[id$="-upit"]{scroll-margin-top:calc(90px + env(safe-area-inset-top,
 <section class="mk">
   <div class="wrap">
     <div class="head">
-      <div><p class="eyebrow">Paket · Smile makeover</p><h2>Sva tri tretmana, jedan plan.</h2><p class="lead">Za potpunu promjenu osmijeha tretmane radimo redom kojim daju najbolji rezultat, u jednom planu liječenja.</p></div>
+      <div><p class="eyebrow">Paket · Smile makeover</p><h2>Sva tri tretmana, jedan plan.</h2><p class="lead">Za potpunu transformaciju osmijeha objedinjujemo sve tretmane u jedan plan i provodimo ih redoslijedom koji osigurava najbolji rezultat.</p></div>
       <button type="button" class="btn btn-gold" data-open-form>Dogovorite konzultacije <span class="arr">→</span></button>
     </div>
     <ol class="mk-steps">
-      <li><span class="mk-n">1</span><div><h3>Aligneri</h3><p>Najprije poravnamo zube, kako bi daljnji zahvati bili što manje invazivni.</p></div></li>
-      <li><span class="mk-n">2</span><div><h3>Izbjeljivanje</h3><p>Zatim posvijetlimo prirodne zube, jer se boja ljuskica usklađuje s njima.</p></div></li>
-      <li><span class="mk-n">3</span><div><h3>Ljuskice</h3><p>Na kraju, gdje je potrebno, ljuskicama dovršimo oblik i simetriju osmijeha.</p></div></li>
+      <li><span class="mk-n">1</span><div><h3>Aligneri</h3><p>Prvi korak je poravnavanje zuba kako bismo osigurali najbolji položaj za daljnje estetske zahvate i sačuvali što više prirodne strukture zuba.</p></div></li>
+      <li><span class="mk-n">2</span><div><h3>Izbjeljivanje</h3><p>Nakon ravnanja zuba slijedi izbjeljivanje kako bismo postigli svjetliju i ujednačeniju boju prirodnih zuba te pripremili osmijeh za završni estetski zahvat.</p></div></li>
+      <li><span class="mk-n">3</span><div><h3>Ljuskice</h3><p>U završnoj fazi ljuskicama usavršavamo oblik, veličinu i simetriju zuba za skladan i prirodan osmijeh.</p></div></li>
     </ol>
   </div>
 </section>
@@ -767,15 +770,16 @@ section[id],[id$="-upit"]{scroll-margin-top:calc(90px + env(safe-area-inset-top,
     <figure class="team-media reveal">
       <picture>
         <source media="(max-width:860px)" srcset="{{tim-dentora-clinic-stomatoloska-ordinacija-zagreb-800.avif}}">
-        <img class="team-main" src="{{tim-dentora-clinic-stomatoloska-ordinacija-zagreb-1400.avif}}" alt="Tim Dentora Clinica u ordinaciji" loading="lazy" width="1400" height="2100">
+        <img class="team-main" src="{{tim-dentora-clinic-stomatoloska-ordinacija-zagreb-1400.avif}}" alt="Tim Dentora Clinic u ordinaciji" loading="lazy" width="1400" height="2100">
       </picture>
       <figcaption class="team-tag"><b>Tim Dentora Clinic</b><span>Dankovečka 6, Zagreb</span></figcaption>
     </figure>
     <div class="about-copy reveal">
       <p class="eyebrow">Naš tim</p>
       <h2>Stručnost, povjerenje <em>i posvećenost.</em></h2>
-      <p class="lead">U Dentora Clinicu spajamo znanje, iskustvo i suvremene metode kako bismo svakom pacijentu pružili individualan pristup i vrhunske rezultate.</p>
-      <p style="color:var(--muted);max-width:34em">Svaki plan liječenja počinje razgovorom. Pregledamo snimke s vama, objasnimo mogućnosti i zajedno odaberemo rješenje koje odgovara vašem osmijehu, vremenu i budžetu.</p>
+      <p class="lead">U Dentora Clinic spajamo znanje, iskustvo i suvremene metode kako bismo svakom pacijentu pružili individualan pristup i vrhunske rezultate.</p>
+      <p style="color:var(--muted);max-width:34em">Na prvom pregledu upoznajemo vaše želje i potrebe, analiziramo stanje zuba te predstavljamo mogućnosti liječenja.</p>
+      <p style="color:var(--muted);max-width:34em">Zajedno odabiremo najbolje rješenje i izrađujemo plan prilagođen vama, vašim očekivanjima i mogućnostima.</p>
       <ul class="team-vals">
         <li><span>01</span>Razgovor i plan liječenja prije svakog zahvata</li>
         <li><span>02</span>Digitalna dijagnostika i suvremene metode</li>
@@ -828,14 +832,15 @@ section[id],[id$="-upit"]{scroll-margin-top:calc(90px + env(safe-area-inset-top,
   <div class="wrap tech-grid">
     <img class="reveal" src="{{moderna-stomatoloska-ordinacija-interijer-zagreb.avif}}" alt="Interijer ordinacije Dentora Clinic">
     <div class="reveal">
-      <p class="eyebrow" style="color:#d9b97f">Digitalna ordinacija</p>
-      <h2>Bez gumenih otisaka. Bez nagađanja.</h2>
-      <p class="lead" style="margin-top:18px">Dijagnostiku i planiranje radimo digitalno, pa rezultat vidite prije nego što započnemo.</p>
+      <p class="eyebrow" style="color:#d9b97f">Digitalna dijagnostika</p>
+      <h2>Preciznost od prvog koraka.</h2>
+      <p class="lead" style="margin-top:18px"><strong style="color:#fff;font-weight:600">Zaboravite na klasične otiske i neugodne postupke otiskivanja.</strong> Koristimo suvremenu digitalnu tehnologiju koja nam omogućuje preciznu dijagnostiku i detaljno planiranje svakog zahvata.</p>
       <ul class="tlist">
-        <li><b>Intraoralni skener</b><span>Precizan 3D otisak zuba u nekoliko minuta, bez neugodne paste.</span></li>
-        <li><b>3D planiranje</b><span>Plan aligner terapije i protetike vidite na ekranu prije početka.</span></li>
-        <li><b>Digitalni RTG</b><span>Ortopan snimku pregledavamo zajedno s vama, uz manje zračenja.</span></li>
+        <li><b>Intraoralni skener</b><span>Digitalni otisak bez neugodne mase za otiskivanje.</span></li>
+        <li><b>3D planiranje</b><span>Precizno planiranje terapije i prikaz mogućih rješenja.</span></li>
+        <li><b>Digitalni RTG</b><span>Snimke analiziramo skupa s vama.</span></li>
       </ul>
+      <p class="tech-goal">Cilj je jednostavan: više preciznosti, manje neugodnosti i jasno isplaniran put do zdravog i lijepog osmijeha.</p>
     </div>
   </div>
 </section>
@@ -996,7 +1001,7 @@ function lpHTML(k){const t=T[k];
     <div class="lp-grid"><div class="lp-copy"><p class="eyebrow">${t.eyebrow}</p><h1>${t.h1}</h1><p class="lead">${t.lead}</p>
       <dl class="lp-facts">${t.facts.map(f=>`<div><dt>${f[0]}</dt><dd>${f[1]}</dd></div>`).join('')}</dl>
       <div style="display:flex;gap:14px;flex-wrap:wrap"><button type="button" class="btn btn-gold" data-open-form data-treatment="${k}">Naručite konzultacije <span class="arr">→</span></button><a class="btn btn-line" href="tel:+385919487770">091 948 7770</a></div></div>
-      <img class="lp-img" src="${t.img}" alt="${t.name} u Dentora Clinicu"></div></div></section>
+      <img class="lp-img" src="${t.img}" alt="${t.name} u Dentora Clinic"></div></div></section>
   <section><div class="wrap lp-two">
     <div><p class="eyebrow">Za koga je</p><h2>${t.name} su prava odluka ako…</h2><ul class="checks">${t.who.map(w=>`<li>${w}</li>`).join('')}</ul></div>
     <div><p class="eyebrow">Kako izgleda tretman</p><ol class="steps">${t.steps.map(s=>`<li><div><b>${s[0]}</b><span>${s[1]}</span></div></li>`).join('')}</ol></div>
@@ -1132,7 +1137,7 @@ function svHTML(k){const s=S[k];
         ${anchors.length?`<nav class="toc" aria-label="Na ovoj stranici"><span>Na ovoj stranici</span>${anchors.map(a=>`<a href="#${k}" data-scroll="sv-${a.id}">${a.eyebrow}</a>`).join('')}</nav>`:''}
       </div>
       <div class="svh-media">
-        <img class="svh-img" src="${s.img}" alt="${s.name} u Dentora Clinicu">
+        <img class="svh-img" src="${s.img}" alt="${s.name} u Dentora Clinic">
         <img class="svh-img2" src="${s.img2}" alt="" aria-hidden="true">
         <div class="svh-badge"><b>Božana Jelić Rubil</b><span>dr. med. dent.</span></div>
       </div>

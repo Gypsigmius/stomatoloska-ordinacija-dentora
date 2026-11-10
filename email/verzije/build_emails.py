@@ -164,13 +164,13 @@ def letter():
             </td>
             <td valign="middle">
               <p class="serif" style="margin:0; font-family:{SERIF}; font-size:19px; line-height:24px; color:{INK};">Božana Jelić Rubil</p>
-              {p("dr. med. dent. · osnivačica Dentora Clinica", size=13, lh=20, color=MUTED, mb=0)}
+              {p("dr. med. dent. · osnivačica Dentora Clinic", size=13, lh=20, color=MUTED, mb=0)}
             </td>
           </tr></table>
         </td></tr>
         <tr><td class="px" style="padding:36px 56px 0 56px;">
           <h1 class="h1 serif" style="margin:0 0 22px 0; font-family:{SERIF}; font-size:32px; line-height:40px; font-weight:normal; color:{INK};">Dobar dan, {{{{ime_prezime}}}},</h1>
-          {p("hvala vam što ste se javili Dentora Clinicu. Vaš upit za <strong style=\"color:" + INK + ";\">{{tretman}}</strong> je stigao do nas i osobno ću ga pogledati prije našeg razgovora.", size=17, lh=28)}
+          {p("hvala vam što ste se javili Dentora Clinic. Vaš upit za <strong style=\"color:" + INK + ";\">{{tretman}}</strong> je stigao do nas i osobno ću ga pogledati prije našeg razgovora.", size=17, lh=28)}
           {p("Netko iz mog tima nazvat će vas tijekom radnog vremena kako bismo dogovorili termin. Na prvom posjetu imat ćemo dovoljno vremena za pregled i razgovor, bez žurbe i bez obveze. Zajedno ćemo vidjeti što je najbolje za vaš osmijeh.", size=17, lh=28)}
           {p("Ako u međuvremenu imate pitanja, slobodno odgovorite na ovaj e-mail.", size=17, lh=28, mb=28)}
           <p class="serif" style="margin:0 0 2px 0; font-family:{SERIF}; font-size:24px; line-height:30px; font-style:italic; color:{GOLD_TXT};">Srdačno,</p>

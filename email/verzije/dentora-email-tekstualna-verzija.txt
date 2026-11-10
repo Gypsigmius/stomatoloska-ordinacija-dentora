@@ -1,6 +1,6 @@
 Hvala vam, {{ime_prezime}}!
 
-Zaprimili smo vaš upit za termin u Dentora Clinicu. Javit ćemo vam se telefonom tijekom radnog vremena kako bismo zajedno dogovorili termin koji vam odgovara.
+Zaprimili smo vaš upit za termin u Dentora Clinic. Javit ćemo vam se telefonom tijekom radnog vremena kako bismo zajedno dogovorili termin koji vam odgovara.
 
 VAŠ UPIT
 Ime i prezime: {{ime_prezime}}
@@ -18,7 +18,7 @@ Trebate li promijeniti ili dopuniti upit, jednostavno odgovorite na ovaj e-mail 
 
 Srdačan pozdrav,
 Božana Jelić Rubil, dr. med. dent.
-i tim Dentora Clinica
+i tim Dentora Clinic
 
 Dentora Clinic
 Dankovečka ul. 6, 10040 Zagreb
